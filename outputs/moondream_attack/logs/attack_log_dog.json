@@ -1,0 +1,145 @@
+{
+  "filename": "dog.jpg",
+  "attack_time": 16.807156801223755,
+  "epsilon": 0.03137254901960784,
+  "alpha": 0.00784313725490196,
+  "iterations": 100,
+  "mode": "untargeted",
+  "target_text": null,
+  "seed": 42,
+  "lambdas": {
+    "vision": 0.5,
+    "alignment": 0.5,
+    "language": 1.0
+  },
+  "perturbation_metrics": {
+    "linf": 0.03137257695198059,
+    "l2": 27.862207412719727,
+    "mean_abs": 0.0043310318142175674
+  },
+  "clean_token": 43016,
+  "target_token": null,
+  "history": [
+    {
+      "iteration": 1,
+      "loss": -0.7008571624755859,
+      "l_vision": 0.0,
+      "l_alignment": 0.0,
+      "l_language": -0.7008571624755859,
+      "clean_prob": 0.4961598217487335,
+      "target_prob": 0.5038401782512665,
+      "pred_token": 43016,
+      "pred_text": "The image"
+    },
+    {
+      "iteration": 10,
+      "loss": -9.202046394348145,
+      "l_vision": 0.3040192723274231,
+      "l_alignment": 1.2963088750839233,
+      "l_language": -8.40188217163086,
+      "clean_prob": 0.0002244443749077618,
+      "target_prob": 0.9997755556250922,
+      "pred_token": 44669,
+      "pred_text": "A large"
+    },
+    {
+      "iteration": 20,
+      "loss": -13.256498336791992,
+      "l_vision": 0.33038529753685,
+      "l_alignment": 1.3998445272445679,
+      "l_language": -12.391383171081543,
+      "clean_prob": 4.154229372943519e-06,
+      "target_prob": 0.9999958457706271,
+      "pred_token": 44669,
+      "pred_text": "A large"
+    },
+    {
+      "iteration": 30,
+      "loss": -18.32137680053711,
+      "l_vision": 0.3571570813655853,
+      "l_alignment": 1.5183544158935547,
+      "l_language": -17.383621215820312,
+      "clean_prob": 2.820909905665303e-08,
+      "target_prob": 0.9999999717909009,
+      "pred_token": 44669,
+      "pred_text": "A large"
+    },
+    {
+      "iteration": 40,
+      "loss": -18.099533081054688,
+      "l_vision": 0.3651440441608429,
+      "l_alignment": 1.5618138313293457,
+      "l_language": -17.13605499267578,
+      "clean_prob": 3.613318000361687e-08,
+      "target_prob": 0.99999996386682,
+      "pred_token": 44669,
+      "pred_text": "A large"
+    },
+    {
+      "iteration": 50,
+      "loss": -20.455387115478516,
+      "l_vision": 0.36170119047164917,
+      "l_alignment": 1.5318304300308228,
+      "l_language": -19.508621215820312,
+      "clean_prob": 3.36909811160524e-09,
+      "target_prob": 0.9999999966309019,
+      "pred_token": 44669,
+      "pred_text": "A large"
+    },
+    {
+      "iteration": 60,
+      "loss": -21.81386947631836,
+      "l_vision": 0.3515097498893738,
+      "l_alignment": 1.5041314363479614,
+      "l_language": -20.886049270629883,
+      "clean_prob": 8.4977530567798e-10,
+      "target_prob": 0.9999999991502246,
+      "pred_token": 44669,
+      "pred_text": "A large"
+    },
+    {
+      "iteration": 70,
+      "loss": -25.720382690429688,
+      "l_vision": 0.3682837188243866,
+      "l_alignment": 1.5661282539367676,
+      "l_language": -24.753177642822266,
+      "clean_prob": 1.7775890134852368e-11,
+      "target_prob": 0.9999999999822241,
+      "pred_token": 44669,
+      "pred_text": "A large"
+    },
+    {
+      "iteration": 80,
+      "loss": -26.94005012512207,
+      "l_vision": 0.3536987602710724,
+      "l_alignment": 1.5159331560134888,
+      "l_language": -26.005233764648438,
+      "clean_prob": 5.082415391322037e-12,
+      "target_prob": 0.9999999999949176,
+      "pred_token": 44669,
+      "pred_text": "A large"
+    },
+    {
+      "iteration": 90,
+      "loss": -22.103513717651367,
+      "l_vision": 0.3663507401943207,
+      "l_alignment": 1.5772324800491333,
+      "l_language": -21.13172149658203,
+      "clean_prob": 6.646765915441222e-10,
+      "target_prob": 0.9999999993353235,
+      "pred_token": 44669,
+      "pred_text": "A large"
+    },
+    {
+      "iteration": 100,
+      "loss": -22.851112365722656,
+      "l_vision": 0.3708326518535614,
+      "l_alignment": 1.5732202529907227,
+      "l_language": -21.879085540771484,
+      "clean_prob": 3.1479910345133533e-10,
+      "target_prob": 0.9999999996852009,
+      "pred_token": 44669,
+      "pred_text": "A large"
+    }
+  ]
+}

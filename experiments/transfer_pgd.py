@@ -122,9 +122,10 @@ print("Generating PGD adversarial example...")
 
 adversarial_image = run_attack(
     attack_name=ATTACK,
-    model_adapter=source,
+    model=source.model,
     image=image,
     label=label,
+    preprocess=source.preprocess,
     epsilon=EPSILON,
     alpha=ALPHA,
     iterations=ITERATIONS,

@@ -3,7 +3,7 @@ import torch
 from PIL import Image
 
 from attacks.vlm_pgd import (
-    vlm_pgd_attack,
+    targeted_clip_pgd,
 )
 
 from models.vlm_registry import (
@@ -229,7 +229,7 @@ print(
 print()
 
 adversarial_image = (
-    vlm_pgd_attack(
+    targeted_clip_pgd(
         model=model,
         image=image,
         source_text=SOURCE_TEXT,
@@ -237,7 +237,6 @@ adversarial_image = (
         epsilon=EPSILON,
         alpha=ALPHA,
         iterations=ITERATIONS,
-        random_start=True,
     )
 )
 

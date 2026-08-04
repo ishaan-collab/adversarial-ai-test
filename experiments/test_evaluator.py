@@ -3,6 +3,8 @@ from utils.image import load_image
 from evaluation.evaluator import evaluate_attack
 from engine.attack_runner import run_attack
 
+import torch
+
 
 EPSILON = 8 / 255
 ALPHA = 2 / 255
@@ -13,9 +15,9 @@ ITERATIONS = 10
 # Load model
 # --------------------------------------------------
 
-model, weights, device = load_model()
+adapter = load_model()
 
-print("Using device:", device)
+print("Using device:", adapter.device)
 
 
 # --------------------------------------------------
@@ -26,7 +28,7 @@ _, image = load_image(
     "dog.jpg"
 )
 
-image = image.to(device)
+image = image.to(adapter.device)
 
 
 # --------------------------------------------------
@@ -34,19 +36,11 @@ image = image.to(device)
 # --------------------------------------------------
 
 clean = evaluate_attack(
-    model=model,
-    weights=weights,
+    model=adapter.model,
+    weights=adapter.weights,
     original_image=image,
     adversarial_image=image,
-    preprocess=lambda x: (
-        (x - x.new_tensor(
-            [0.485, 0.456, 0.406]
-        ).view(1, 3, 1, 1))
-        /
-        x.new_tensor(
-            [0.229, 0.224, 0.225]
-        ).view(1, 3, 1, 1)
-    ),
+    preprocess=adapter.preprocess,
 )
 
 label = clean["clean"]["class_id"]
@@ -58,21 +52,13 @@ label = clean["clean"]["class_id"]
 
 adversarial_image = run_attack(
     attack_name="pgd",
-    model=model,
+    model=adapter.model,
     image=image,
-    label=__import__("torch").tensor(
+    label=torch.tensor(
         [label],
-        device=device,
+        device=adapter.device,
     ),
-    preprocess=lambda x: (
-        (x - x.new_tensor(
-            [0.485, 0.456, 0.406]
-        ).view(1, 3, 1, 1))
-        /
-        x.new_tensor(
-            [0.229, 0.224, 0.225]
-        ).view(1, 3, 1, 1)
-    ),
+    preprocess=adapter.preprocess,
     epsilon=EPSILON,
     alpha=ALPHA,
     iterations=ITERATIONS,
@@ -84,19 +70,11 @@ adversarial_image = run_attack(
 # --------------------------------------------------
 
 result = evaluate_attack(
-    model=model,
-    weights=weights,
+    model=adapter.model,
+    weights=adapter.weights,
     original_image=image,
     adversarial_image=adversarial_image,
-    preprocess=lambda x: (
-        (x - x.new_tensor(
-            [0.485, 0.456, 0.406]
-        ).view(1, 3, 1, 1))
-        /
-        x.new_tensor(
-            [0.229, 0.224, 0.225]
-        ).view(1, 3, 1, 1)
-    ),
+    preprocess=adapter.preprocess,
 )
 
 
@@ -155,7 +133,7 @@ print(
 )
 print(
     f"  Mean |perturbation|: "
-    f"{result['mean_abs']:.8f}"
+    f"{result['mean_perturbation']:.8f}"
 )
 
 print("=" * 60)

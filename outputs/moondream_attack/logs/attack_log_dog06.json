@@ -1,0 +1,145 @@
+{
+  "filename": "dog06.jpg",
+  "attack_time": 17.764864921569824,
+  "epsilon": 0.03137254901960784,
+  "alpha": 0.00784313725490196,
+  "iterations": 100,
+  "mode": "untargeted",
+  "target_text": null,
+  "seed": 42,
+  "lambdas": {
+    "vision": 0.5,
+    "alignment": 0.5,
+    "language": 1.0
+  },
+  "perturbation_metrics": {
+    "linf": 0.03137257695198059,
+    "l2": 27.647472381591797,
+    "mean_abs": 0.005774069577455521
+  },
+  "clean_token": 43016,
+  "target_token": null,
+  "history": [
+    {
+      "iteration": 1,
+      "loss": -0.5781459808349609,
+      "l_vision": 0.0,
+      "l_alignment": 0.0,
+      "l_language": -0.5781459808349609,
+      "clean_prob": 0.5609374046325684,
+      "target_prob": 0.43906259536743164,
+      "pred_token": 43016,
+      "pred_text": "The image"
+    },
+    {
+      "iteration": 10,
+      "loss": -4.592058181762695,
+      "l_vision": 0.39174139499664307,
+      "l_alignment": 1.6777530908584595,
+      "l_language": -3.5573110580444336,
+      "clean_prob": 0.028515394777059555,
+      "target_prob": 0.9714846052229404,
+      "pred_token": 41605,
+      "pred_text": "In the"
+    },
+    {
+      "iteration": 20,
+      "loss": -8.495209693908691,
+      "l_vision": 0.44581565260887146,
+      "l_alignment": 1.8952285051345825,
+      "l_language": -7.3246870040893555,
+      "clean_prob": 0.0006590659031644464,
+      "target_prob": 0.9993409340968356,
+      "pred_token": 48040,
+      "pred_text": "A black and white"
+    },
+    {
+      "iteration": 30,
+      "loss": -13.371182441711426,
+      "l_vision": 0.42472875118255615,
+      "l_alignment": 1.8039493560791016,
+      "l_language": -12.256843566894531,
+      "clean_prob": 4.752482709591277e-06,
+      "target_prob": 0.9999952475172904,
+      "pred_token": 48040,
+      "pred_text": "A black and white"
+    },
+    {
+      "iteration": 40,
+      "loss": -15.935552597045898,
+      "l_vision": 0.409917950630188,
+      "l_alignment": 1.705653190612793,
+      "l_language": -14.877767562866211,
+      "clean_prob": 3.4567483453429304e-07,
+      "target_prob": 0.9999996543251655,
+      "pred_token": 48040,
+      "pred_text": "A black and white"
+    },
+    {
+      "iteration": 50,
+      "loss": -17.90478515625,
+      "l_vision": 0.3995669484138489,
+      "l_alignment": 1.657847285270691,
+      "l_language": -16.87607765197754,
+      "clean_prob": 4.6861156732802556e-08,
+      "target_prob": 0.9999999531388433,
+      "pred_token": 48040,
+      "pred_text": "A black and white"
+    },
+    {
+      "iteration": 60,
+      "loss": -17.42250633239746,
+      "l_vision": 0.40808603167533875,
+      "l_alignment": 1.6835941076278687,
+      "l_language": -16.376667022705078,
+      "clean_prob": 7.721540384864056e-08,
+      "target_prob": 0.9999999227845962,
+      "pred_token": 48040,
+      "pred_text": "A black and white"
+    },
+    {
+      "iteration": 70,
+      "loss": -23.286237716674805,
+      "l_vision": 0.4084430932998657,
+      "l_alignment": 1.6636838912963867,
+      "l_language": -22.250173568725586,
+      "clean_prob": 2.1720644727274419e-10,
+      "target_prob": 0.9999999997827935,
+      "pred_token": 48040,
+      "pred_text": "A black and white"
+    },
+    {
+      "iteration": 80,
+      "loss": -26.618816375732422,
+      "l_vision": 0.38775673508644104,
+      "l_alignment": 1.5997802019119263,
+      "l_language": -25.62504768371582,
+      "clean_prob": 7.433322186944924e-12,
+      "target_prob": 0.9999999999925667,
+      "pred_token": 48040,
+      "pred_text": "A black and white"
+    },
+    {
+      "iteration": 90,
+      "loss": -24.380258560180664,
+      "l_vision": 0.39675867557525635,
+      "l_alignment": 1.6136114597320557,
+      "l_language": -23.375072479248047,
+      "clean_prob": 7.052373962590508e-11,
+      "target_prob": 0.9999999999294763,
+      "pred_token": 48040,
+      "pred_text": "A black and white"
+    },
+    {
+      "iteration": 100,
+      "loss": -33.41927719116211,
+      "l_vision": 0.40360864996910095,
+      "l_alignment": 1.6848526000976562,
+      "l_language": -32.37504577636719,
+      "clean_prob": 8.703542206877583e-15,
+      "target_prob": 0.9999999999999913,
+      "pred_token": 48040,
+      "pred_text": "A black and white"
+    }
+  ]
+}

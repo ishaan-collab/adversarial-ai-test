@@ -5,7 +5,7 @@ from art.estimators.classification import PyTorchClassifier
 from art.attacks.evasion import ProjectedGradientDescentPyTorch
 
 from models.loader import load_model
-from utils.image import load_image, normalize_image
+from utils.image import load_image
 
 
 # ============================================================
@@ -21,9 +21,9 @@ ITERATIONS = 10
 # Load model
 # ============================================================
 
-model, weights, device = load_model()
+adapter = load_model()
 
-print("Using device:", device)
+print("Using device:", adapter.device)
 
 
 # ============================================================
@@ -32,18 +32,18 @@ print("Using device:", device)
 
 _, image = load_image("dog.jpg")
 
-image = image.to(device)
+image = image.to(adapter.device)
 
 
 # ============================================================
 # Get clean prediction
 # ============================================================
 
-clean_input = normalize_image(image)
+clean_input = adapter.preprocess(image)
 
 with torch.no_grad():
 
-    clean_output = model(
+    clean_output = adapter.model(
         clean_input
     )
 
@@ -59,7 +59,7 @@ clean_confidence, clean_class_id = (
 clean_confidence = clean_confidence.item()
 clean_class_id = clean_class_id.item()
 
-clean_category = weights.meta["categories"][
+clean_category = adapter.weights.meta["categories"][
     clean_class_id
 ]
 
@@ -79,12 +79,12 @@ print(
 loss = torch.nn.CrossEntropyLoss()
 
 optimizer = torch.optim.SGD(
-    model.parameters(),
+    adapter.model.parameters(),
     lr=0.01
 )
 
 classifier = PyTorchClassifier(
-    model=model,
+    model=adapter.model,
     loss=loss,
     optimizer=optimizer,
     input_shape=tuple(image.shape[1:]),
@@ -94,7 +94,7 @@ classifier = PyTorchClassifier(
         np.array([0.485, 0.456, 0.406]),
         np.array([0.229, 0.224, 0.225]),
     ),
-    device_type="gpu" if device.type == "cuda" else "cpu",
+    device_type="gpu" if adapter.device.type == "cuda" else "cpu",
 )
 
 
@@ -147,20 +147,20 @@ art_adversarial = attack.generate(
 
 art_adversarial_tensor = torch.from_numpy(
     art_adversarial
-).to(device)
+).to(adapter.device)
 
 
 # ============================================================
 # Evaluate ART adversarial image
 # ============================================================
 
-art_input = normalize_image(
+art_input = adapter.preprocess(
     art_adversarial_tensor
 )
 
 with torch.no_grad():
 
-    art_output = model(
+    art_output = adapter.model(
         art_input
     )
 
@@ -176,7 +176,7 @@ art_confidence, art_class_id = (
 art_confidence = art_confidence.item()
 art_class_id = art_class_id.item()
 
-art_category = weights.meta["categories"][
+art_category = adapter.weights.meta["categories"][
     art_class_id
 ]
 

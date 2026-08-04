@@ -1,0 +1,101 @@
+======================================================================
+MOONDREAM2 ADVERSARIAL ATTACK SUMMARY REPORT
+======================================================================
+
+Timestamp: 2026-08-04T16:43:48.316420
+Total time: 259.1s
+Images evaluated: 11
+Attack mode: untargeted
+
+Configuration:
+  epsilon=0.031373  alpha=0.007843  iterations=100
+  lambda: vision=0.5 alignment=0.5 language=1.0
+
+White-box (HF moondream2) results:
+  Description changed: 9/11 (81.8%)
+  Source removed: 0/11 (0.0%)
+  Target appeared: 0/11 (0.0%)
+
+Black-box (Ollama moondream Q4) transfer:
+  Description changed: 11/11 (100.0%)
+  Source removed: 0/11 (0.0%)
+  Target appeared: 0/11 (0.0%)
+
+Perturbation:
+  Average L-inf: 0.03137258
+  Average L2: 27.83982572
+  Average attack time: 17.30s
+
+Per-image descriptions:
+
+  dog.jpg:
+    Clean HF:     The image features a golden retriever standing in a field of colorful flowers. The dog is positioned towards the center of the scene, looking directly at the camera with its tongue hanging out. The vibrant flower field fills most of the background, creating a beautiful contrast with the golden retriever's fur.
+    Adv HF:       The image features a golden retriever standing in a field of colorful flowers. The dog is positioned towards the center of the scene, looking directly at the camera with its tongue hanging out. The vibrant flower field fills most of the background, creating a beautiful contrast with the golden retriever's fur.
+    Clean Ollama: The image features a large, light-colored dog standing on a field of flowers. The dog appears to be quite content and happy as it enjoys the beautiful surroundings. There are numerous colorful flowers surrounding the dog, creating a vibrant and lively atmosphere.
+    Adv Ollama:   In the image, there is a large golden retriever dog standing on a field of flowers. The dog appears to be enjoying its time outdoors and seems quite happy as it stands confidently amidst the colorful scene. The vibrant colors of the flowers surrounding the dog create an inviting and lively atmosphere in the picture.
+
+  dog01.jpg:
+    Clean HF:     The image features a golden retriever standing in a field of colorful flowers. The dog is positioned towards the center of the scene, looking directly at the camera with its tongue hanging out. The vibrant flower field fills most of the background, creating a beautiful contrast with the golden retriever's fur.
+    Adv HF:       The image features a golden retriever standing in a field of colorful flowers. The dog is positioned towards the center of the scene, looking directly at the camera with its tongue hanging out. The vibrant flower field fills most of the background, creating a beautiful contrast with the dog's golden fur. The dog appears to be enjoying its time outdoors amidst the flowers.
+    Clean Ollama: In the image, there is a large golden retriever standing on a field of purple flowers. The dog appears to be enjoying its time outdoors and is looking directly at the camera. The field is filled with various types of flowers, providing a vibrant backdrop for the scene.
+    Adv Ollama:   The image features a large golden retriever standing on its hind legs, seemingly posing for the camera. The dog is positioned centrally in the frame and stands tall with its tongue hanging out as it appears to be smiling at the viewer. The background of the photo shows a field filled with purple flowers, creating a vibrant and colorful setting for this happy moment captured between the dog and the photographer.
+
+Additionally, there are two people present in the image. One person is standing near the left edge of the frame, while another individual can be seen on the right side of the frame slightly behind the golden retriever.
+
+  dog02.jpg:
+    Clean HF:     The image features a close-up of a yellow Labrador Retriever lying down on a lush green field. The dog is looking directly at the camera with its tongue hanging out, giving the impression of panting. The dog's eyes are wide open, conveying a sense of alertness and happiness. The vibrant green field contrasts beautifully with the dog's yellow fur, creating a visually appealing scene.
+    Adv HF:       The image features a close-up of a yellow Labrador Retriever lying down on a lush green field. The dog is looking directly at the camera with its tongue hanging out, giving the impression of panting. The dog's eyes are wide open, conveying a sense of alertness and happiness. The vibrant green field contrasts beautifully with the dog's yellow fur, creating a visually appealing scene.
+    Clean Ollama: The image features a large, light-colored dog with its tongue hanging out. The dog is facing the camera and appears to be panting slightly from playing outside on a green hill.
+    Adv Ollama:   In the image, a large yellow dog is sitting on top of grass. The dog has its tongue hanging out and appears to be panting or enjoying itself outside. Its face is turned towards the camera, giving us a clear view of its cheerful expression.
+
+  dog03.jpg:
+    Clean HF:     The image features a black and tan German Shepherd standing on a lush green field, looking attentive and possibly posing for the camera. The dog is positioned towards the center of the image, occupying a significant portion of the frame. 
+
+The dog's tongue is hanging out slightly, adding a playful element to the scene. The field is surrounded by trees, providing a serene and natural setting for the dog.
+    Adv HF:       The image features a black and tan German Shepherd standing on a lush green field, looking directly at the camera with its tongue hanging out. The dog is positioned towards the center of the image, occupying a significant portion of the frame. The field is surrounded by trees, providing a serene and natural setting for the dog.
+    Clean Ollama: In the image, a black and tan German Shepherd dog is standing on a lush green field. The dog has its tongue out, possibly panting or simply enjoying the outdoor environment. It appears to be looking at something off-camera near a fence that separates it from the viewer.
+    Adv Ollama:   The image features a large black and tan German Shepherd dog standing on a green field. The dog appears to be panting, possibly after playing or running around. It is facing the camera, giving us a clear view of its appearance and expression.
+
+  dog04.jpg:
+    Clean HF:     The image features a brown and white dog standing in a grassy field with wildflowers. The dog is positioned towards the center of the scene, looking directly at the camera with its tongue hanging out slightly. The dog is wearing a collar, adding to its friendly appearance. The grassy field is lush and green, dotted with wildflowers in various shades of purple and pink. The dog seems to be enjoying its time outdoors in the beautiful natural setting.
+    Adv HF:       The image features a brown and white dog standing in a grassy field with wildflowers. The dog is positioned towards the center of the scene, looking directly at the camera with its tongue hanging out slightly. The dog is wearing a collar, adding to its friendly appearance. The grassy field is lush and green, dotted with wildflowers in various shades of purple and pink, creating a picturesque and serene background.
+    Clean Ollama: The image features a small brown and white dog with its tongue hanging out, standing on the grass. The dog appears to be panting, possibly after playing or running around outside. It is located towards the center of the frame, surrounded by tall grass that creates an impression of being in nature.
+    Adv Ollama:   The image features a beautiful beagle dog standing on its hind legs, with its tongue hanging out. The dog is positioned at the center of the frame and appears to be enjoying itself as it faces the camera. The background includes a grassy area with trees visible behind the dog, creating a serene outdoor setting for this delightful scene.
+
+  dog05.jpg:
+    Clean HF:     The image features a cute pug dog sitting on lush green grass. The pug has a black nose and is looking directly at the camera, giving the impression of being curious and attentive. The dog's fur is light-colored, contrasting beautifully with the vibrant green grass. The dog appears to be wearing a harness, further adding to its charming appearance.
+    Adv HF:       The image features a cute pug dog sitting in a lush green field. The pug has a white coat with black accents on its face and ears. It is wearing a blue leash and appears to be looking directly at the camera, giving the impression that it might be curious about something or someone off-camera. The vibrant green grass surrounding the pug creates a serene and natural setting.
+    Clean Ollama: The image features a pug dog sitting on the grass. The dog is looking directly at the camera, giving off an impression of curiosity and attentiveness. Its fur appears to be white with black markings, making it easily recognizable as a pug. The background consists of green grass that fills most of the frame.
+    Adv Ollama:   The image features a small, adorable pug dog sitting on the grass. The dog's face is prominently displayed with its eyes open and looking directly at the camera. It appears to be wearing a harness or collar for support while it enjoys the outdoors.
+
+  dog06.jpg:
+    Clean HF:     The image features a black and white husky dog standing on a rocky hilltop, enjoying the view. The dog is positioned towards the center of the scene, looking off into the distance with a happy and curious expression. The rocky hilltop provides a natural and rugged backdrop for the dog, enhancing its majestic appearance.
+    Adv HF:       The image features a black and white husky standing on a rocky hillside, looking off into the distance. The dog is positioned towards the left side of the image, occupying a significant portion of the frame. The dog's posture is upright and alert, capturing its attentive gaze. The rocky hillside provides a natural and rugged backdrop for the dog.
+    Clean Ollama: The image features a large, black and white dog standing on top of a rock. The dog is positioned near the center of the picture, with its front paws placed directly on the rock surface. It appears to be looking towards something or someone outside the frame. The background consists of a sky that blends into the landscape, making it difficult to discern any specific details.
+    Adv Ollama:   The image shows a large black and white dog standing confidently on top of a rocky ledge or cliff. The dog is facing the camera, giving an impression of alertness and curiosity. In the background, there are some clouds scattered across the sky, making for a picturesque outdoor scene.
+
+  dog07.jpg:
+    Clean HF:     The image features a small black and tan dog standing on a lush green lawn. The dog is facing the camera, looking directly at you. Its tail is held high, slightly curled up. The dog's ears are perked up, indicating attentiveness to its surroundings. The dog's coat is black and tan, contrasting beautifully with the vibrant green grass beneath it.
+    Adv HF:       The image features a small black and tan dog standing on a lush green lawn. The dog is facing the camera, looking directly at you. Its tail is curled up behind its body, giving it a playful appearance. The dog's ears are perked up, indicating attentiveness to its surroundings.
+    Clean Ollama: The image features a small dog standing on lush green grass. The dog is brown and black, with its front legs slightly bent as it looks directly at the camera. Its ears are perked up, showing alertness and attentiveness to its surroundings.
+    Adv Ollama:   The image features a small black and tan dog standing on its hind legs, with one paw raised. The dog is positioned centrally within the frame, giving it a prominent appearance as the main subject of the photo.
+
+  dog08.jpg:
+    Clean HF:     The image features a Dalmatian dog standing on a lush green lawn. The dog is facing the camera, looking directly at you. Its distinctive black and white spotted coat is clearly visible, making it the focal point of the scene. The dog appears to be in a relaxed and alert posture, enjoying its time outdoors.
+    Adv HF:       The image features a Dalmatian dog standing on a lush green field. The dog is facing the camera, attentively looking towards the viewer. Its distinctive black and white spotted coat adds to its charming appearance. The dog is wearing a collar, completing its look.
+    Clean Ollama: The image features a black and white spotted dog standing on lush green grass. The dog appears to be alone, with no other animals or people around it. It is facing towards the left side of the frame, giving an impression that someone might have taken a photo capturing its natural beauty in the field.
+    Adv Ollama:   In the image, there is a black and white spotted dog standing on green grass. The dog appears to be facing left side of the picture while it stands alone. The scene seems to capture a moment where the dog has stopped or paused its activity, possibly observing something or simply enjoying the surroundings.
+
+  dog09.jpg:
+    Clean HF:     The image features a large black and white dog standing on a lush green lawn. The dog is positioned towards the left side of the scene, looking off into the distance. The dog's coat is predominantly black, with white spots scattered across its body. It has a brown collar around its neck. The lawn is vibrant and full of life, contrasting beautifully with the dog's striking appearance.
+    Adv HF:       The image features a large black and white dog, possibly a Great Dane, standing on a lush green lawn. The dog is looking off to the side, giving the impression of curiosity or attentiveness. It has a brown collar around its neck, further emphasizing its presence in the scene. The dog's posture and gaze create a captivating and engaging image.
+    Clean Ollama: The image features a large black and white dog standing on lush green grass. The dog appears to be the main subject of the photograph, with no other objects or people visible in the frame. It is positioned towards the right side of the photo, facing a specific direction, possibly towards its owner. The scene captures the beauty and serenity of nature as well as the unique appearance of this majestic animal.
+    Adv Ollama:   The image features a large black and white dog standing on lush green grass. The dog appears to be panting, possibly after playing or running around. It is positioned towards the left side of the frame with its front legs slightly apart, giving it an alert stance. The scene takes place in a wooded area, adding a natural ambiance to the image.
+
+  dog10.jpg:
+    Clean HF:     The image features a black and brown dog, possibly a Rottweiler, standing in a grassy area with fallen leaves scattered around it. The dog is positioned towards the center of the scene and appears to be looking off into the distance, appearing happy and relaxed. The dog is wearing a red collar, adding a pop of color to its coat. The setting is outdoors, with trees in the background providing a natural backdrop to the scene.
+    Adv HF:       The image features a black and brown dog, possibly a Rottweiler, standing on a grassy field. The dog is looking towards the camera with its tongue hanging out, giving it a happy and playful expression. The dog is wearing a red collar, adding a pop of color to its coat. 
+
+The grassy field is dotted with fallen leaves, contributing to the overall natural and serene atmosphere of the scene.
+    Clean Ollama: In the image, a large black and brown dog is standing on grass surrounded by fallen leaves. The dog appears to be panting slightly, possibly due to the cool weather or excitement from being outside. It's likely enjoying its time outdoors, exploring the natural environment around it.
+    Adv Ollama:   The image depicts a black and brown dog standing on the grass. The dog appears to be panting, possibly after playing or running around in an outdoor setting like a park. It has a red collar on its neck, which might indicate that it belongs to someone nearby who took it for a walk.

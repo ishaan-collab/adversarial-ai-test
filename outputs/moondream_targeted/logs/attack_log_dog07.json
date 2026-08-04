@@ -1,0 +1,255 @@
+{
+  "filename": "dog07.jpg",
+  "attack_time": 57.618473052978516,
+  "epsilon": 0.03137254901960784,
+  "alpha": 0.00784313725490196,
+  "iterations": 200,
+  "mode": "targeted",
+  "target_text": "A cat sitting on a couch",
+  "seed": 42,
+  "lambdas": {
+    "vision": 0.5,
+    "alignment": 0.5,
+    "language": 1.0
+  },
+  "perturbation_metrics": {
+    "linf": 0.03137257695198059,
+    "l2": 27.962726593017578,
+    "mean_abs": 0.005908364430069923
+  },
+  "clean_token": 43016,
+  "target_token": 53,
+  "history": [
+    {
+      "iteration": 1,
+      "loss": 9.25,
+      "l_vision": 0.0,
+      "l_alignment": 0.0,
+      "l_language": 9.25,
+      "clean_prob": 0.7353485822677612,
+      "target_prob": 0.006362011656165123,
+      "pred_token": 43016,
+      "pred_text": "The image"
+    },
+    {
+      "iteration": 10,
+      "loss": 4.586277961730957,
+      "l_vision": 0.3264373242855072,
+      "l_alignment": 1.376007318496704,
+      "l_language": 5.4375,
+      "clean_prob": 0.571143388748169,
+      "target_prob": 0.046882305294275284,
+      "pred_token": 43016,
+      "pred_text": "The image"
+    },
+    {
+      "iteration": 20,
+      "loss": 3.2639076709747314,
+      "l_vision": 0.39058932662010193,
+      "l_alignment": 1.7065948247909546,
+      "l_language": 4.3125,
+      "clean_prob": 0.5887661576271057,
+      "target_prob": 0.04265007749199867,
+      "pred_token": 43016,
+      "pred_text": "The image"
+    },
+    {
+      "iteration": 30,
+      "loss": 2.0502090454101562,
+      "l_vision": 0.3753305673599243,
+      "l_alignment": 1.5867513418197632,
+      "l_language": 3.03125,
+      "clean_prob": 0.572074294090271,
+      "target_prob": 0.05321119725704193,
+      "pred_token": 43016,
+      "pred_text": "The image"
+    },
+    {
+      "iteration": 40,
+      "loss": 0.8906237483024597,
+      "l_vision": 0.3918074667453766,
+      "l_alignment": 1.6706949472427368,
+      "l_language": 1.921875,
+      "clean_prob": 0.3294054865837097,
+      "target_prob": 0.4792821407318115,
+      "pred_token": 53,
+      "pred_text": "A"
+    },
+    {
+      "iteration": 50,
+      "loss": 0.08136934041976929,
+      "l_vision": 0.4053417444229126,
+      "l_alignment": 1.7444195747375488,
+      "l_language": 1.15625,
+      "clean_prob": 0.4350718855857849,
+      "target_prob": 0.3839495778083801,
+      "pred_token": 43016,
+      "pred_text": "The image"
+    },
+    {
+      "iteration": 60,
+      "loss": -0.14655661582946777,
+      "l_vision": 0.4200303554534912,
+      "l_alignment": 1.7949578762054443,
+      "l_language": 0.9609375,
+      "clean_prob": 0.06073308736085892,
+      "target_prob": 0.8383944034576416,
+      "pred_token": 53,
+      "pred_text": "A"
+    },
+    {
+      "iteration": 70,
+      "loss": -1.1012156009674072,
+      "l_vision": 0.459617018699646,
+      "l_alignment": 2.016251564025879,
+      "l_language": 0.13671875,
+      "clean_prob": 0.014497261494398117,
+      "target_prob": 0.8969138264656067,
+      "pred_token": 53,
+      "pred_text": "A"
+    },
+    {
+      "iteration": 80,
+      "loss": -0.9574052691459656,
+      "l_vision": 0.4618471562862396,
+      "l_alignment": 2.003744602203369,
+      "l_language": 0.275390625,
+      "clean_prob": 0.15619134902954102,
+      "target_prob": 0.700001060962677,
+      "pred_token": 53,
+      "pred_text": "A"
+    },
+    {
+      "iteration": 90,
+      "loss": -0.5628685355186462,
+      "l_vision": 0.4855702817440033,
+      "l_alignment": 2.124541759490967,
+      "l_language": 0.7421875,
+      "clean_prob": 0.011978235095739365,
+      "target_prob": 0.9515490531921387,
+      "pred_token": 53,
+      "pred_text": "A"
+    },
+    {
+      "iteration": 100,
+      "loss": -0.691716194152832,
+      "l_vision": 0.5040218234062195,
+      "l_alignment": 2.2231605052948,
+      "l_language": 0.671875,
+      "clean_prob": 0.22178244590759277,
+      "target_prob": 0.2847743034362793,
+      "pred_token": 53,
+      "pred_text": "A"
+    },
+    {
+      "iteration": 110,
+      "loss": -1.4725496768951416,
+      "l_vision": 0.5983361005783081,
+      "l_alignment": 2.6006696224212646,
+      "l_language": 0.126953125,
+      "clean_prob": 0.0033761418890208006,
+      "target_prob": 0.8261146545410156,
+      "pred_token": 53,
+      "pred_text": "A"
+    },
+    {
+      "iteration": 120,
+      "loss": -2.167076587677002,
+      "l_vision": 0.8521142601966858,
+      "l_alignment": 3.609968423843384,
+      "l_language": 0.06396484375,
+      "clean_prob": 0.002986276987940073,
+      "target_prob": 0.9382602572441101,
+      "pred_token": 53,
+      "pred_text": "A"
+    },
+    {
+      "iteration": 130,
+      "loss": -2.316312789916992,
+      "l_vision": 0.9190118312835693,
+      "l_alignment": 3.878652811050415,
+      "l_language": 0.08251953125,
+      "clean_prob": 0.004286040086299181,
+      "target_prob": 0.9255268573760986,
+      "pred_token": 53,
+      "pred_text": "A"
+    },
+    {
+      "iteration": 140,
+      "loss": -2.288079023361206,
+      "l_vision": 0.9363179802894592,
+      "l_alignment": 3.9191367626190186,
+      "l_language": 0.1396484375,
+      "clean_prob": 0.018435528501868248,
+      "target_prob": 0.8882734775543213,
+      "pred_token": 53,
+      "pred_text": "A"
+    },
+    {
+      "iteration": 150,
+      "loss": -2.0642096996307373,
+      "l_vision": 0.853074848651886,
+      "l_alignment": 3.7675318717956543,
+      "l_language": 0.24609375,
+      "clean_prob": 0.09941596537828445,
+      "target_prob": 0.7345901131629944,
+      "pred_token": 53,
+      "pred_text": "A"
+    },
+    {
+      "iteration": 160,
+      "loss": -2.5080220699310303,
+      "l_vision": 0.9926546812057495,
+      "l_alignment": 4.3710455894470215,
+      "l_language": 0.173828125,
+      "clean_prob": 0.07035550475120544,
+      "target_prob": 0.8571054935455322,
+      "pred_token": 53,
+      "pred_text": "A"
+    },
+    {
+      "iteration": 170,
+      "loss": -2.9353432655334473,
+      "l_vision": 1.1489722728729248,
+      "l_alignment": 4.975620269775391,
+      "l_language": 0.126953125,
+      "clean_prob": 0.05413779243826866,
+      "target_prob": 0.8468576073646545,
+      "pred_token": 53,
+      "pred_text": "A"
+    },
+    {
+      "iteration": 180,
+      "loss": -2.7185003757476807,
+      "l_vision": 1.0617245435714722,
+      "l_alignment": 4.5510573387146,
+      "l_language": 0.087890625,
+      "clean_prob": 0.006375655997544527,
+      "target_prob": 0.9462312459945679,
+      "pred_token": 53,
+      "pred_text": "A"
+    },
+    {
+      "iteration": 190,
+      "loss": -2.774620294570923,
+      "l_vision": 1.0983527898788452,
+      "l_alignment": 4.642293930053711,
+      "l_language": 0.095703125,
+      "clean_prob": 0.01359319593757391,
+      "target_prob": 0.8409812450408936,
+      "pred_token": 53,
+      "pred_text": "A"
+    },
+    {
+      "iteration": 200,
+      "loss": -3.1395761966705322,
+      "l_vision": 1.2729755640029907,
+      "l_alignment": 5.225903511047363,
+      "l_language": 0.10986328125,
+      "clean_prob": 0.004082761239260435,
+      "target_prob": 0.8816308379173279,
+      "pred_token": 53,
+      "pred_text": "A"
+    }
+  ]
+}

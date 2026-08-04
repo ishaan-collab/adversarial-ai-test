@@ -1,0 +1,145 @@
+{
+  "filename": "dog05.jpg",
+  "attack_time": 16.39583396911621,
+  "epsilon": 0.03137254901960784,
+  "alpha": 0.00784313725490196,
+  "iterations": 100,
+  "mode": "untargeted",
+  "target_text": null,
+  "seed": 42,
+  "lambdas": {
+    "vision": 0.5,
+    "alignment": 0.5,
+    "language": 1.0
+  },
+  "perturbation_metrics": {
+    "linf": 0.03137257695198059,
+    "l2": 27.72545051574707,
+    "mean_abs": 0.009700348600745201
+  },
+  "clean_token": 43016,
+  "target_token": null,
+  "history": [
+    {
+      "iteration": 1,
+      "loss": -0.23188287019729614,
+      "l_vision": 0.0,
+      "l_alignment": 0.0,
+      "l_language": -0.23188287019729614,
+      "clean_prob": 0.7930390238761902,
+      "target_prob": 0.20696097612380981,
+      "pred_token": 43016,
+      "pred_text": "The image"
+    },
+    {
+      "iteration": 10,
+      "loss": -4.790904998779297,
+      "l_vision": 0.3071669638156891,
+      "l_alignment": 1.2223320007324219,
+      "l_language": -4.026155471801758,
+      "clean_prob": 0.017842797562479973,
+      "target_prob": 0.98215720243752,
+      "pred_token": 41605,
+      "pred_text": "In the"
+    },
+    {
+      "iteration": 20,
+      "loss": -12.137174606323242,
+      "l_vision": 0.3536331355571747,
+      "l_alignment": 1.405763030052185,
+      "l_language": -11.257475852966309,
+      "clean_prob": 1.2910413715871982e-05,
+      "target_prob": 0.9999870895862841,
+      "pred_token": 45193,
+      "pred_text": "A white"
+    },
+    {
+      "iteration": 30,
+      "loss": -16.130756378173828,
+      "l_vision": 0.34739992022514343,
+      "l_alignment": 1.4079442024230957,
+      "l_language": -15.253083229064941,
+      "clean_prob": 2.375035847990148e-07,
+      "target_prob": 0.9999997624964152,
+      "pred_token": 45193,
+      "pred_text": "A white"
+    },
+    {
+      "iteration": 40,
+      "loss": -15.9959716796875,
+      "l_vision": 0.346660852432251,
+      "l_alignment": 1.3922390937805176,
+      "l_language": -15.126522064208984,
+      "clean_prob": 2.6954731424666534e-07,
+      "target_prob": 0.9999997304526858,
+      "pred_token": 45193,
+      "pred_text": "A white"
+    },
+    {
+      "iteration": 50,
+      "loss": -18.784427642822266,
+      "l_vision": 0.36374133825302124,
+      "l_alignment": 1.4541347026824951,
+      "l_language": -17.87548828125,
+      "clean_prob": 1.7249398354124423e-08,
+      "target_prob": 0.9999999827506016,
+      "pred_token": 45193,
+      "pred_text": "A white"
+    },
+    {
+      "iteration": 60,
+      "loss": -17.457691192626953,
+      "l_vision": 0.38020411133766174,
+      "l_alignment": 1.5345062017440796,
+      "l_language": -16.500335693359375,
+      "clean_prob": 6.823313469794812e-08,
+      "target_prob": 0.9999999317668653,
+      "pred_token": 45193,
+      "pred_text": "A white"
+    },
+    {
+      "iteration": 70,
+      "loss": -19.43377685546875,
+      "l_vision": 0.3714114725589752,
+      "l_alignment": 1.4957284927368164,
+      "l_language": -18.500207901000977,
+      "clean_prob": 9.2355225689289e-09,
+      "target_prob": 0.9999999907644774,
+      "pred_token": 45193,
+      "pred_text": "A white"
+    },
+    {
+      "iteration": 80,
+      "loss": -20.834030151367188,
+      "l_vision": 0.38268551230430603,
+      "l_alignment": 1.5352054834365845,
+      "l_language": -19.875083923339844,
+      "clean_prob": 2.3353965428185575e-09,
+      "target_prob": 0.9999999976646035,
+      "pred_token": 45193,
+      "pred_text": "A white"
+    },
+    {
+      "iteration": 90,
+      "loss": -30.23643684387207,
+      "l_vision": 0.398210346698761,
+      "l_alignment": 1.5746561288833618,
+      "l_language": -29.250003814697266,
+      "clean_prob": 1.9810009481337904e-13,
+      "target_prob": 0.9999999999998019,
+      "pred_token": 45193,
+      "pred_text": "A white"
+    },
+    {
+      "iteration": 100,
+      "loss": -24.01886749267578,
+      "l_vision": 0.38392889499664307,
+      "l_alignment": 1.5286505222320557,
+      "l_language": -23.062576293945312,
+      "clean_prob": 9.639399695116069e-11,
+      "target_prob": 0.999999999903606,
+      "pred_token": 45193,
+      "pred_text": "A white"
+    }
+  ]
+}

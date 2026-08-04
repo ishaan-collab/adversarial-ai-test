@@ -1,0 +1,86 @@
+{
+  "timestamp": "2026-08-04T17:03:07.310767",
+  "total_time": 63.86689472198486,
+  "configuration": {
+    "attack_mode": "targeted",
+    "target_text": "A cat sitting on a couch",
+    "source_text": "a photo of a dog",
+    "epsilon": 0.03137254901960784,
+    "alpha": 0.00784313725490196,
+    "iterations": 200,
+    "seed": 42,
+    "lambda_vision": 0.5,
+    "lambda_alignment": 0.5,
+    "lambda_language": 1.0,
+    "white_box_model": "HuggingFace moondream2 (bfloat16)",
+    "black_box_model": "Ollama moondream (Q4)"
+  },
+  "images_evaluated": 1,
+  "white_box_metrics": {
+    "description_changed": 1,
+    "description_changed_pct": 100.0,
+    "source_removed": 0,
+    "source_removed_pct": 0.0,
+    "target_appeared": 0,
+    "target_appeared_pct": 0.0
+  },
+  "black_box_metrics": {
+    "description_changed": 1,
+    "description_changed_pct": 100.0,
+    "source_removed": 0,
+    "source_removed_pct": 0.0,
+    "target_appeared": 0,
+    "target_appeared_pct": 0.0
+  },
+  "perturbation": {
+    "avg_linf": 0.03137257695198059,
+    "avg_l2": 27.962726593017578,
+    "avg_attack_time": 57.618473052978516
+  },
+  "per_image_results": [
+    {
+      "filename": "dog07.jpg",
+      "image_path": "data/vlm/dog07.jpg",
+      "image_size": [
+        1600,
+        1131
+      ],
+      "clean_hf_desc": "The image features a small black and tan dog standing on a lush green lawn. The dog is facing the camera, looking directly at you. Its tail is held high, slightly curled up. The dog's ears are perked up, indicating attentiveness to its surroundings. The dog's coat is black and tan, contrasting beautifully with the vibrant green grass beneath it.",
+      "clean_ollama_desc": "The image features a small dog standing on a lush green field. The dog is facing the camera, giving us an up-close view of its face and expression. It appears to be looking directly at the viewer with curiosity or interest.",
+      "adv_hf_desc": "The image features a small black and tan dog standing on a lush green lawn. The dog is facing the camera, looking directly at you. Its tail is curled up behind its body, giving it a playful appearance. The dog's ears are perked up, indicating attentiveness to its surroundings.",
+      "adv_ollama_desc": "The image features a small dog, possibly a Chihuahua or a similar breed, standing on lush green grass. The dog is positioned close to the bottom of the frame and appears to be looking directly at the camera with an attentive expression. Its body language suggests that it might be waiting for someone or simply enjoying its surroundings.",
+      "clean_hf_source": false,
+      "clean_hf_target": false,
+      "adv_hf_source": false,
+      "adv_hf_target": false,
+      "clean_ollama_source": false,
+      "clean_ollama_target": false,
+      "adv_ollama_source": false,
+      "adv_ollama_target": false,
+      "hf_desc_changed": true,
+      "hf_source_removed": false,
+      "hf_target_appeared": false,
+      "ollama_desc_changed": true,
+      "ollama_source_removed": false,
+      "ollama_target_appeared": false,
+      "linf": 0.03137257695198059,
+      "l2": 27.962726593017578,
+      "mean_abs": 0.005908364430069923,
+      "epsilon": 0.03137254901960784,
+      "within_budget": true,
+      "attack_mode": "targeted",
+      "target_text": "A cat sitting on a couch",
+      "iterations": 200,
+      "alpha": 0.00784313725490196,
+      "seed": 42,
+      "lambda_vision": 0.5,
+      "lambda_alignment": 0.5,
+      "lambda_language": 1.0,
+      "attack_time": 57.618473052978516,
+      "hf_clean_time": 1.961226463317871,
+      "adv_image_path": "outputs/moondream_targeted/adversarial_examples/adv_dog07.png",
+      "visualization_path": "outputs/moondream_targeted/visualizations/viz_dog07.png",
+      "attack_log_path": "outputs/moondream_targeted/logs/attack_log_dog07.json"
+    }
+  ]
+}

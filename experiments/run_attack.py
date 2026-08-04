@@ -4,7 +4,6 @@ from models.loader import load_model
 
 from utils.image import (
     load_image,
-    normalize_image,
     save_tensor_as_image,
 )
 
@@ -34,9 +33,9 @@ BIM_ITERATIONS = 10
 # Load model
 # ============================================================
 
-model, weights, device = load_model()
+adapter = load_model()
 
-print("Using device:", device)
+print("Using device:", adapter.device)
 
 
 # ============================================================
@@ -47,19 +46,19 @@ _, image = load_image(
     IMAGE_PATH
 )
 
-image = image.to(device)
+image = image.to(adapter.device)
 
 
 # ============================================================
 # Clean prediction
 # ============================================================
 
-clean_input = normalize_image(
+clean_input = adapter.preprocess(
     image
 )
 
 with torch.no_grad():
-    clean_output = model(
+    clean_output = adapter.model(
         clean_input
     )
 
@@ -80,7 +79,7 @@ clean_confidence = (
     clean_confidence.item()
 )
 
-clean_category = weights.meta[
+clean_category = adapter.weights.meta[
     "categories"
 ][clean_class_id]
 
@@ -104,7 +103,7 @@ print(
 
 label = torch.tensor(
     [clean_class_id],
-    device=device,
+    device=adapter.device,
 )
 
 
@@ -113,11 +112,11 @@ label = torch.tensor(
 # ============================================================
 
 fgsm_image = fgsm_attack(
-    model=model,
+    model=adapter.model,
     image=image,
     label=label,
     epsilon=EPSILON,
-    preprocess=normalize_image,
+    preprocess=adapter.preprocess,
 )
 
 save_tensor_as_image(
@@ -126,12 +125,11 @@ save_tensor_as_image(
 )
 
 fgsm_results = evaluate_attack(
-    model=model,
-    weights=weights,
+    model=adapter.model,
+    weights=adapter.weights,
     original_image=image,
     adversarial_image=fgsm_image,
-    clean_class_id=clean_class_id,
-    preprocess=normalize_image,
+    preprocess=adapter.preprocess,
 )
 
 print_evaluation(
@@ -145,13 +143,13 @@ print_evaluation(
 # ============================================================
 
 bim_image = bim_attack(
-    model=model,
+    model=adapter.model,
     image=image,
     label=label,
     epsilon=EPSILON,
     alpha=BIM_ALPHA,
     iterations=BIM_ITERATIONS,
-    preprocess=normalize_image,
+    preprocess=adapter.preprocess,
 )
 
 save_tensor_as_image(
@@ -160,12 +158,11 @@ save_tensor_as_image(
 )
 
 bim_results = evaluate_attack(
-    model=model,
-    weights=weights,
+    model=adapter.model,
+    weights=adapter.weights,
     original_image=image,
     adversarial_image=bim_image,
-    clean_class_id=clean_class_id,
-    preprocess=normalize_image,
+    preprocess=adapter.preprocess,
 )
 
 print_evaluation(
@@ -181,13 +178,13 @@ PGD_ALPHA = 2 / 255
 PGD_ITERATIONS = 10
 
 pgd_image = pgd_attack(
-    model=model,
+    model=adapter.model,
     image=image,
     label=label,
     epsilon=EPSILON,
     alpha=PGD_ALPHA,
     iterations=PGD_ITERATIONS,
-    preprocess=normalize_image,
+    preprocess=adapter.preprocess,
     random_start=True,
 )
 
@@ -197,12 +194,11 @@ save_tensor_as_image(
 )
 
 pgd_results = evaluate_attack(
-    model=model,
-    weights=weights,
+    model=adapter.model,
+    weights=adapter.weights,
     original_image=image,
     adversarial_image=pgd_image,
-    clean_class_id=clean_class_id,
-    preprocess=normalize_image,
+    preprocess=adapter.preprocess,
 )
 
 print_evaluation(
@@ -233,21 +229,21 @@ print("-" * 60)
 print(
     f"{'FGSM':<10}"
     f"{str(fgsm_results['prediction_changed']):<22}"
-    f"{fgsm_results['adversarial_confidence'] * 100:>6.2f}%"
+    f"{fgsm_results['adversarial']['confidence'] * 100:>6.2f}%"
     f"{fgsm_results['linf']:<15.8f}"
 )
 
 print(
     f"{'BIM':<10}"
     f"{str(bim_results['prediction_changed']):<22}"
-    f"{bim_results['adversarial_confidence'] * 100:>6.2f}%"
+    f"{bim_results['adversarial']['confidence'] * 100:>6.2f}%"
     f"{bim_results['linf']:<15.8f}"
 )
 
 print(
     f"{'PGD':<10}"
     f"{str(pgd_results['prediction_changed']):<22}"
-    f"{pgd_results['adversarial_confidence'] * 100:>6.2f}%"
+    f"{pgd_results['adversarial']['confidence'] * 100:>6.2f}%"
     f"{pgd_results['linf']:<15.8f}"
 )
 

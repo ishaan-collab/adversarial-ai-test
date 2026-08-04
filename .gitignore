@@ -1,0 +1,57 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+*.egg
+
+# Downloaded model weights / checkpoints
+*.pt
+*.pth
+*.bin
+*.safetensors
+*.onnx
+*.gguf
+*.ckpt
+checkpoints/
+weights/
+models_cache/
+hub/
+
+# HuggingFace cache
+.cache/
+
+# Environment / secrets
+.env
+.env.*
+*.key
+*.pem
+secrets/
+
+# OS-specific
+.DS_Store
+Thumbs.db
+*:Zone.Identifier
+
+# IDE / editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Logs
+*.log
