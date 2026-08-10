@@ -1,0 +1,82 @@
+[
+  {
+    "image": "dog.jpg",
+    "clean_desc": "In this image, I see a **Golden Retriever** standing proudly in a vibrant, colorful flower field.\n\nHere\u2019s a breakdown of what\u2019s visible:\n\n- **The Dog**: A healthy, well-groomed Golden Retriever with a golden coat. It\u2019s standing alert, facing slightly to the left but looking toward the camera. Its mouth is open and tongue is hanging out \u2014 suggesting it\u2019s happy or panting gently. The dog appears calm and confident.\n\n- **",
+    "adv_desc": "This image features a **Golden Retriever** standing proudly in a vibrant, colorful field of flowers. The dog is the central focus \u2014 it has a golden coat, floppy ears, and its tongue is playfully sticking out, giving it a happy, friendly expression.\n\nThe background is artistically blurred (bokeh effect) with bands of color: purple flowers in the foreground, green grass or foliage behind the dog, and then streaks of yellow and orange further back \u2014 suggesting a garden or",
+    "clean_has_dog": true,
+    "adv_has_dog": true,
+    "transfer_success": false
+  },
+  {
+    "image": "dog01.jpg",
+    "clean_desc": "In this image, I see a **Golden Retriever** standing proudly in a vibrant, colorful flower field.\n\nHere\u2019s a breakdown of what\u2019s visible:\n\n- **The Dog**: A healthy, well-groomed Golden Retriever with a golden coat. It\u2019s standing alert, facing slightly to the left but looking toward the camera. Its mouth is open and tongue is hanging out \u2014 suggesting it\u2019s happy or panting gently. The dog appears calm and confident.\n\n- **",
+    "adv_desc": "In this image, I see a **Golden Retriever** standing proudly in a vibrant, colorful field of flowers.\n\nHere\u2019s a breakdown of what\u2019s visible:\n\n- **The Dog**: A large, fluffy Golden Retriever with a golden coat is the central focus. It\u2019s facing forward, looking directly at the camera with its mouth open and tongue hanging out \u2014 giving it a happy, friendly expression. Its ears are floppy, and its fur appears soft and well-groomed.",
+    "clean_has_dog": true,
+    "adv_has_dog": true,
+    "transfer_success": false
+  },
+  {
+    "image": "dog02.jpg",
+    "clean_desc": "In this image, I see a **happy, light-colored Labrador Retriever** lying on a vibrant green lawn under a bright blue sky with soft white clouds.\n\nHere\u2019s a breakdown of what\u2019s visible:\n\n- **The Dog**:  \n  - It\u2019s a yellow or cream-colored Labrador, likely an adult.\n  - Its expression is friendly and relaxed \u2014 eyes are warm and alert, ears are floppy, and its mouth is open with its tongue hanging out in a classic \u201cdog",
+    "adv_desc": "This image features a **light-colored Labrador Retriever** (likely yellow or cream) as the central subject, positioned in the foreground and looking directly at the viewer with an open mouth and tongue out \u2014 giving it a happy, friendly expression.\n\nHowever, the image has been digitally altered or stylized:\n\n- The background is not a natural outdoor scene but rather a **patterned, decorative design** overlaid on what appears to be a sky and grass field.\n  - The \u201c",
+    "clean_has_dog": true,
+    "adv_has_dog": true,
+    "transfer_success": false
+  },
+  {
+    "image": "dog03.jpg",
+    "clean_desc": "In this image, I see a **German Shepherd dog** standing alertly in a grassy field.\n\nHere\u2019s a detailed breakdown:\n\n- **Dog\u2019s Appearance**:  \n  - The dog has the classic black-and-tan coat pattern typical of German Shepherds \u2014 black saddle over the back and tan markings on the legs, chest, and face.\n  - Its ears are large, erect, and pointed \u2014 a hallmark of the breed.\n  - The dog is panting",
+    "adv_desc": "In this image, I see a **German Shepherd dog** standing alertly in a grassy outdoor area. Here\u2019s a detailed breakdown:\n\n- **Dog\u2019s Appearance**:  \n  - The dog has the classic black-and-tan coat of a German Shepherd, with a black saddle pattern over its back and tan markings on its legs, chest, and face.\n  - Its ears are large, erect, and pointed \u2014 typical of the breed.\n  - It is panting slightly,",
+    "clean_has_dog": true,
+    "adv_has_dog": true,
+    "transfer_success": false
+  },
+  {
+    "image": "dog04.jpg",
+    "clean_desc": "In this image, I see a **Beagle dog** standing in a grassy field with wildflowers. Here\u2019s a detailed breakdown:\n\n- **The Dog**:  \n  - It\u2019s a classic tri-color Beagle (white, tan, and black), though the black is mostly on its back and ears.\n  - The dog has long, floppy ears, expressive brown eyes, and a friendly, alert expression.\n  - Its tongue is hanging out \u2014 suggesting it\u2019s panting",
+    "adv_desc": "In this image, I see a **Beagle dog** standing in a grassy field with wildflowers. Here\u2019s a detailed breakdown:\n\n- **The Dog**:  \n  - It\u2019s a classic tricolor Beagle \u2014 white chest and legs, tan head and ears, with black markings on its back (partially visible).  \n  - Its long, floppy ears frame its face, and it has large, expressive brown eyes looking directly at the camera.  \n  - The dog\u2019s tongue",
+    "clean_has_dog": true,
+    "adv_has_dog": true,
+    "transfer_success": false
+  },
+  {
+    "image": "dog05.jpg",
+    "clean_desc": "In this image, I see a **pug dog** sitting on a lush green lawn. The pug is facing the camera directly, with an expressive, slightly melancholic or soulful look in its large, dark eyes. Its face is characteristic of the breed \u2014 wrinkled forehead, short muzzle, and a black mask around the nose and mouth. The dog\u2019s ears are floppy and dark, contrasting with its fawn-colored coat.\n\nIt appears to be wearing a **black harness**, visible across",
+    "adv_desc": "In this image, I see a **pug dog** sitting upright and looking directly at the camera with an expressive, slightly melancholic or soulful gaze.\n\nHere are some key details:\n\n- **Breed**: The dog is clearly a pug \u2014 recognizable by its flat face, large dark eyes, wrinkled forehead, and short muzzle.\n- **Coat Color**: It has a fawn-colored coat (light beige/tan) with black markings on its ears, muzzle, and",
+    "clean_has_dog": true,
+    "adv_has_dog": true,
+    "transfer_success": false
+  },
+  {
+    "image": "dog06.jpg",
+    "clean_desc": "In this image, I see a **Siberian Husky** standing proudly atop a rocky outcrop in a natural, open landscape.\n\nHere\u2019s a detailed breakdown:\n\n- **The Dog**:  \n  - It\u2019s a classic black-and-white Siberian Husky with erect triangular ears, piercing blue eyes (though they appear dark in this lighting), and a thick double coat.\n  - Its expression is alert and happy \u2014 mouth slightly open, tongue visible, giving it a friendly,",
+    "adv_desc": "This image features a **Siberian Husky** standing proudly atop a rocky outcrop, set against a dreamy, ethereal background.\n\nHere\u2019s what I see:\n\n\ud83d\udd39 **The Dog**:  \n- A classic black-and-white Siberian Husky with erect triangular ears, piercing blue eyes (though they appear dark in this lighting), and a thick double coat.  \n- Its mouth is slightly open, tongue visible \u2014 giving it a friendly, alert expression.  \n- It",
+    "clean_has_dog": true,
+    "adv_has_dog": true,
+    "transfer_success": false
+  },
+  {
+    "image": "dog07.jpg",
+    "clean_desc": "In this image, I see a small, alert dog standing in a grassy field. Here\u2019s a detailed breakdown:\n\n- **Breed**: The dog appears to be a **Chihuahua**, likely a smooth-coat variety, given its short fur and compact size.\n  \n- **Coat Color & Markings**: It has a predominantly black coat with tan markings on its legs, chest, muzzle, and above the eyes (often called \u201ceyebrows\u201d). There\u2019s also a",
+    "adv_desc": "In this image, I see a small, alert dog standing in a grassy field. The dog appears to be a **Chihuahua** or a similar toy breed, with the following features:\n\n- **Coat and Color**: It has a short, smooth coat that is primarily black on its back and sides, with tan markings on its legs, chest, muzzle, and above its eyes (often called \u201ctan points\u201d).\n- **Ears**: Large, erect, and pointed \u2014",
+    "clean_has_dog": true,
+    "adv_has_dog": true,
+    "transfer_success": false
+  },
+  {
+    "image": "dog08.jpg",
+    "clean_desc": "In this image, I see a **Dalmatian dog** standing alertly on a lush green lawn.\n\nHere\u2019s a detailed breakdown:\n\n- **Breed**: The dog is clearly a Dalmatian, identifiable by its distinctive white coat covered in black spots.\n- **Posture**: It\u2019s standing in profile, facing right, with its head turned slightly toward the camera \u2014 giving it an attentive and poised appearance.\n- **Coat & Markings**: Its fur is predominantly",
+    "adv_desc": "In this image, I see a **Dalmatian dog** standing alertly on a grassy field.\n\nHere\u2019s a detailed breakdown:\n\n- **Breed**: The dog is clearly a Dalmatian, identifiable by its distinctive white coat covered in black spots.\n- **Posture**: It\u2019s standing in profile, facing right, with its head turned slightly toward the camera \u2014 giving it an attentive and poised appearance.\n- **Physical Features**:\n  - Sleek, muscular",
+    "clean_has_dog": true,
+    "adv_has_dog": true,
+    "transfer_success": false
+  },
+  {
+    "image": "dog09.jpg",
+    "clean_desc": "In this image, I see a **Great Dane** standing alertly on a lush green lawn. The dog has a striking **harlequin coat pattern** \u2014 primarily white with large, irregular black patches covering much of its body, including its back, sides, and head. Its face is mostly black with some white markings around the muzzle and eyes.\n\nThe Great Dane is positioned in profile, facing slightly to the right, with its head turned toward the camera, giving it an attentive and dign",
+    "adv_desc": "In this image, I see a **Great Dane** standing alertly in a grassy outdoor setting.\n\nHere\u2019s a detailed breakdown:\n\n- **Dog Breed & Appearance**: The dog is a Great Dane \u2014 large, tall, and muscular with a sleek coat. It has a striking **harlequin pattern**: primarily white with large, irregular black patches covering its back, sides, and parts of its legs and head. Its ears are floppy, and it wears a dark collar with a small",
+    "clean_has_dog": true,
+    "adv_has_dog": true,
+    "transfer_success": false
+  }
+]

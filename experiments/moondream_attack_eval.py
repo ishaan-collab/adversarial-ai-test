@@ -55,30 +55,38 @@ DATASET_DIR = "data/vlm"
 IMAGE_EXTENSIONS = (".jpg", ".jpeg", ".png", ".webp")
 
 SOURCE_TEXT = "a photo of a dog"
-TARGET_TEXT = "a photo of a cat"
+TARGET_TEXT = "A cat sitting on a couch"
 
 EPSILON = 8 / 255
 ALPHA = 2 / 255
-ITERATIONS = 100
+ITERATIONS = 300
 SEED = 42
 
-LAMBDA_VISION = 0.5
-LAMBDA_ALIGNMENT = 0.5
-LAMBDA_LANGUAGE = 1.0
+LAMBDA_VISION = 1.0
+LAMBDA_ALIGNMENT = 1.0
+LAMBDA_LANGUAGE = 5.0
 
 OLLAMA_HOST = "http://127.0.0.1:11435"
 OLLAMA_MODEL = "moondream"
 
-OUTPUT_DIR = "outputs/moondream_attack"
+OUTPUT_DIR = "outputs/moondream_attack_targeted"
+
+ATTACK_SIZE = 378
 
 
 # ============================================================
 # HELPERS
 # ============================================================
 
-def load_image_raw(path):
-    """Load an image as PIL + [1, 3, H, W] float tensor in [0, 1]."""
+def load_image_raw(path, attack_size=ATTACK_SIZE):
+    """Load an image as PIL + [1, 3, H, W] float tensor in [0, 1].
+
+    If attack_size is set, resize to attack_size x attack_size for
+    consistent single-crop processing across attack and evaluation.
+    """
     pil_image = Image.open(path).convert("RGB")
+    if attack_size:
+        pil_image = pil_image.resize((attack_size, attack_size), Image.LANCZOS)
     tensor = (
         torch.from_numpy(np.array(pil_image))
         .permute(2, 0, 1)
@@ -240,7 +248,7 @@ def evaluate_single_image(
     print(f"  Image size: {pil_image.size}")
 
     source_kw = SOURCE_TEXT.replace("a photo of ", "").strip()
-    target_kw = TARGET_TEXT.replace("a photo of ", "").strip()
+    target_kw = TARGET_TEXT.split()[0].lower()  # "cat" from "A cat sitting..."
 
     # --------------------------------------------------------
     # STEP 1: CLEAN -- HF MOONDREAM2 (WHITE-BOX)
@@ -310,7 +318,7 @@ def evaluate_single_image(
         lambda_vision=LAMBDA_VISION,
         lambda_alignment=LAMBDA_ALIGNMENT,
         lambda_language=LAMBDA_LANGUAGE,
-        random_start=False,
+        random_start=True,
         seed=SEED,
         return_details=True,
     )
@@ -487,6 +495,7 @@ def evaluate_single_image(
         "lambda_vision": LAMBDA_VISION,
         "lambda_alignment": LAMBDA_ALIGNMENT,
         "lambda_language": LAMBDA_LANGUAGE,
+        "attack_size": ATTACK_SIZE,
         "attack_time": attack_time,
         "hf_clean_time": hf_time,
         # Output paths
@@ -518,8 +527,8 @@ def main():
     parser.add_argument(
         "--targeted",
         type=str,
-        default=None,
-        help="Target text for targeted attack (e.g. 'A cat')",
+        default=TARGET_TEXT,
+        help="Target text for targeted attack (default: 'A cat sitting on a couch')",
     )
     parser.add_argument(
         "--untargeted",
@@ -577,6 +586,7 @@ def main():
     print(f"  Lambda vision    : {LAMBDA_VISION}")
     print(f"  Lambda alignment : {LAMBDA_ALIGNMENT}")
     print(f"  Lambda language  : {LAMBDA_LANGUAGE}")
+    print(f"  Attack size      : {ATTACK_SIZE}x{ATTACK_SIZE}")
     print(f"  White-box model  : HuggingFace moondream2 (bfloat16)")
     print(f"  Black-box model  : Ollama moondream (Q4)")
     print(f"  Ollama host      : {OLLAMA_HOST}")
@@ -773,6 +783,7 @@ def main():
             "lambda_vision": LAMBDA_VISION,
             "lambda_alignment": LAMBDA_ALIGNMENT,
             "lambda_language": LAMBDA_LANGUAGE,
+            "attack_size": ATTACK_SIZE,
             "white_box_model": "HuggingFace moondream2 (bfloat16)",
             "black_box_model": "Ollama moondream (Q4)",
         },
@@ -824,7 +835,8 @@ def main():
                 f"iterations={ITERATIONS}\n")
         f.write(f"  lambda: vision={LAMBDA_VISION} "
                 f"alignment={LAMBDA_ALIGNMENT} "
-                f"language={LAMBDA_LANGUAGE}\n\n")
+                f"language={LAMBDA_LANGUAGE}\n")
+        f.write(f"  attack_size: {ATTACK_SIZE}x{ATTACK_SIZE}\n\n")
 
         f.write("White-box (HF moondream2) results:\n")
         f.write(f"  Description changed: {hf_changed}/{total} "

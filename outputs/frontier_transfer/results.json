@@ -1,0 +1,11 @@
+{
+  "question": "What do you see in this image?",
+  "max_tokens": 150,
+  "dry_run": true,
+  "models": [
+    "glm5"
+  ],
+  "elapsed_s": 4.76837158203125e-07,
+  "timestamp": "2026-08-06T15:08:37.742942",
+  "results": []
+}

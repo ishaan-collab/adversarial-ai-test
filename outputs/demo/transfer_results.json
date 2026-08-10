@@ -1,0 +1,7 @@
+{
+  "ollama_clean": "\nThe image features a small, brown and black dog standing on the grass. The dog is facing towards the right side of the frame, giving us a clear view of its front legs and hind legs. It appears to be alone in the field, enjoying the outdoors.",
+  "ollama_adv": "\nThe image features a small dog standing on the grass, facing towards the right side of the frame. The dog appears to be looking at something or someone off-camera. The background is blurred and green, giving an impression that it's outdoors with a natural setting.",
+  "clean_has_dog": true,
+  "adv_has_dog": true,
+  "adv_has_cat": false
+}

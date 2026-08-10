@@ -269,9 +269,9 @@ def moondream_pgd(
         # ------------------------------------------------
 
         if targeted:
-            # Multi-crop CE (matches HF describe() and Ollama)
+            # Multi-crop CE with Q4 quantization simulation (matches Ollama Q4_0)
             l_mc, _ = model.get_multicrop_multi_token_loss(
-                diverse_input, target_ids
+                diverse_input, target_ids, q4_noise='q4'
             )
             # Single-crop CE (helps transfer to quantized model)
             l_sc, _ = model.get_multi_token_loss(

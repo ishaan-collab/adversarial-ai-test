@@ -1,0 +1,58 @@
+{
+  "filename": "dog.jpg",
+  "attack_time": 39.30429816246033,
+  "epsilon": 0.03137254901960784,
+  "alpha": 0.00784313725490196,
+  "iterations": 50,
+  "momentum": 0.9,
+  "mode": "targeted",
+  "target_text": "A cat sitting on a couch",
+  "seed": 42,
+  "lambdas": {
+    "vision": 1.0,
+    "alignment": 1.0,
+    "language": 5.0
+  },
+  "perturbation_metrics": {
+    "linf": 0.03137257695198059,
+    "l2": 15.673569679260254,
+    "mean_abs": 0.025068875402212143
+  },
+  "history": [
+    {
+      "iteration": 10,
+      "loss": 30.83635139465332,
+      "l_vision": 1.1432145833969116,
+      "l_alignment": 1.4323478937149048,
+      "l_language": 6.682383060455322
+    },
+    {
+      "iteration": 20,
+      "loss": 27.117612838745117,
+      "l_vision": 1.1999748945236206,
+      "l_alignment": 1.4226733446121216,
+      "l_language": 5.948052406311035
+    },
+    {
+      "iteration": 30,
+      "loss": 22.325735092163086,
+      "l_vision": 1.3244603872299194,
+      "l_alignment": 1.6110458374023438,
+      "l_language": 5.052248477935791
+    },
+    {
+      "iteration": 40,
+      "loss": 19.04157829284668,
+      "l_vision": 1.4190648794174194,
+      "l_alignment": 1.709241271018982,
+      "l_language": 4.433977127075195
+    },
+    {
+      "iteration": 50,
+      "loss": 19.504457473754883,
+      "l_vision": 1.4360477924346924,
+      "l_alignment": 1.740549921989441,
+      "l_language": 4.536211013793945
+    }
+  ]
+}

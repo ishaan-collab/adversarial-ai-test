@@ -1,0 +1,32 @@
+======================================================================
+LLaVA-1.5-7B ADVERSARIAL ATTACK SUMMARY REPORT
+======================================================================
+
+Timestamp: 2026-08-07T14:54:01.321923
+Total time: 74.7s
+Images evaluated: 1
+Attack mode: targeted
+
+Configuration:
+  epsilon=0.031373  alpha=0.007843  iterations=50
+  momentum=0.9
+  lambda: vision=1.0 alignment=1.0 language=5.0
+  attack_size: 336x336
+
+White-box (LLaVA-1.5-7B) results:
+  Description changed: 1/1 (100.0%)
+  Source removed: 0/1 (0.0%)
+  Target appeared: 1/1 (100.0%)
+
+Perturbation:
+  Average L-inf: 0.03137258
+  Average L2: 15.67356968
+  Average attack time: 39.30s
+
+Per-image descriptions:
+
+  dog.jpg:
+    Clean: The image features a large, fluffy, and happy golden retriever standing in a field of flowers. The dog is positioned in the center of the scene, with its tongue out, seemingly enjoying the vibrant surroundings. The field is filled with various flowers, creating a colorful and lively atmosphere.
+    Adv:   The image features a cat sitting on a couch, with a TV in the background. The cat is positioned in the center of the scene, and the couch is located on the left side of the image. The TV is placed on the right side of the image, slightly above the couch.
+
+In the background, there is a field of flowers, adding a touch of color and beauty to the scene. The combination of the cat, the couch, and the TV creates

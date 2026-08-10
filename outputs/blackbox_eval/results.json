@@ -1,0 +1,31 @@
+{
+  "attack": "v3",
+  "epsilon": 0.03137254901960784,
+  "max_queries": 5,
+  "seed": 42,
+  "total_images": 1,
+  "successes": 0,
+  "total_queries": 5,
+  "total_elapsed": 3.3927459716796875,
+  "results": [
+    {
+      "image": "dog07",
+      "path": "data/vlm/dog07.jpg",
+      "attack": "v3",
+      "epsilon": 0.03137254901960784,
+      "queries_used": 5,
+      "max_queries": 5,
+      "attack_score": 34.0,
+      "verify_score": 34.0,
+      "success": false,
+      "has_dog": true,
+      "clean_text": "\nThe image features a small dog standing on the grass, facing towards the right side of the frame. The dog appears to be black and brown with white markings on its legs, giving it a unique appearance. It is positioned near the center of the scene, occupying most of the available space in the image.",
+      "adv_text": "\nThe image features a small, brown and black dog standing on the grass. The dog is facing towards the right side of the frame, giving us a clear view of its front legs and paws. It appears to be looking at something or someone off-camera, possibly observing an interesting object or event in its surr",
+      "linf": 0.0313725471496582,
+      "within_budget": true,
+      "elapsed": 1.7135586738586426,
+      "seed": 42,
+      "timestamp": "2026-08-06T17:42:36.473913"
+    }
+  ]
+}

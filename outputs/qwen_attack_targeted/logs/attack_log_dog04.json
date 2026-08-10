@@ -1,0 +1,233 @@
+{
+  "filename": "dog04.jpg",
+  "attack_time": 195.19219994544983,
+  "epsilon": 0.03137254901960784,
+  "alpha": 0.00784313725490196,
+  "iterations": 300,
+  "momentum": 0.9,
+  "mode": "targeted",
+  "target_text": "A cat sitting on a couch",
+  "seed": 42,
+  "lambdas": {
+    "vision": 1.0,
+    "alignment": 1.0,
+    "language": 5.0
+  },
+  "perturbation_metrics": {
+    "linf": 0.03137257695198059,
+    "l2": 21.072525024414062,
+    "mean_abs": 0.025421295315027237
+  },
+  "history": [
+    {
+      "iteration": 10,
+      "loss": -39397.57421875,
+      "l_vision": 39414.85546875,
+      "l_alignment": 3.2258498668670654,
+      "l_language": 4.101624011993408
+    },
+    {
+      "iteration": 20,
+      "loss": -40385.48828125,
+      "l_vision": 40402.84375,
+      "l_alignment": 3.3321447372436523,
+      "l_language": 4.137404918670654
+    },
+    {
+      "iteration": 30,
+      "loss": -42729.50390625,
+      "l_vision": 42746.96875,
+      "l_alignment": 3.2075753211975098,
+      "l_language": 4.134414196014404
+    },
+    {
+      "iteration": 40,
+      "loss": -46104.78515625,
+      "l_vision": 46122.88671875,
+      "l_alignment": 3.161376476287842,
+      "l_language": 4.252669811248779
+    },
+    {
+      "iteration": 50,
+      "loss": -49786.9453125,
+      "l_vision": 49804.7265625,
+      "l_alignment": 3.0820960998535156,
+      "l_language": 4.172440052032471
+    },
+    {
+      "iteration": 60,
+      "loss": -51730.36328125,
+      "l_vision": 51748.0,
+      "l_alignment": 2.901670455932617,
+      "l_language": 4.108188152313232
+    },
+    {
+      "iteration": 70,
+      "loss": -58340.80078125,
+      "l_vision": 58358.46875,
+      "l_alignment": 2.971713066101074,
+      "l_language": 4.127817153930664
+    },
+    {
+      "iteration": 80,
+      "loss": -61259.6015625,
+      "l_vision": 61276.91796875,
+      "l_alignment": 2.9022843837738037,
+      "l_language": 4.044095516204834
+    },
+    {
+      "iteration": 90,
+      "loss": -63665.6796875,
+      "l_vision": 63683.71484375,
+      "l_alignment": 2.9364256858825684,
+      "l_language": 4.194143295288086
+    },
+    {
+      "iteration": 100,
+      "loss": -65226.7265625,
+      "l_vision": 65246.76171875,
+      "l_alignment": 2.896533966064453,
+      "l_language": 4.5864410400390625
+    },
+    {
+      "iteration": 110,
+      "loss": -64177.98828125,
+      "l_vision": 64199.46484375,
+      "l_alignment": 2.8809142112731934,
+      "l_language": 4.871731281280518
+    },
+    {
+      "iteration": 120,
+      "loss": -68016.1640625,
+      "l_vision": 68033.671875,
+      "l_alignment": 3.037424087524414,
+      "l_language": 4.109249114990234
+    },
+    {
+      "iteration": 130,
+      "loss": -72455.234375,
+      "l_vision": 72473.125,
+      "l_alignment": 3.1554551124572754,
+      "l_language": 4.209230899810791
+    },
+    {
+      "iteration": 140,
+      "loss": -73942.1328125,
+      "l_vision": 73960.4921875,
+      "l_alignment": 3.1259818077087402,
+      "l_language": 4.29676628112793
+    },
+    {
+      "iteration": 150,
+      "loss": -67375.2265625,
+      "l_vision": 67392.8359375,
+      "l_alignment": 3.255009174346924,
+      "l_language": 4.172748565673828
+    },
+    {
+      "iteration": 160,
+      "loss": -64147.453125,
+      "l_vision": 64166.05078125,
+      "l_alignment": 3.3570876121520996,
+      "l_language": 4.390844345092773
+    },
+    {
+      "iteration": 170,
+      "loss": -62650.0625,
+      "l_vision": 62667.5390625,
+      "l_alignment": 3.223053455352783,
+      "l_language": 4.140192985534668
+    },
+    {
+      "iteration": 180,
+      "loss": -65466.4609375,
+      "l_vision": 65484.44921875,
+      "l_alignment": 3.282306671142578,
+      "l_language": 4.2539849281311035
+    },
+    {
+      "iteration": 190,
+      "loss": -66579.0078125,
+      "l_vision": 66596.0546875,
+      "l_alignment": 3.1676745414733887,
+      "l_language": 4.041518688201904
+    },
+    {
+      "iteration": 200,
+      "loss": -68300.78125,
+      "l_vision": 68316.8046875,
+      "l_alignment": 3.304013729095459,
+      "l_language": 3.866370439529419
+    },
+    {
+      "iteration": 210,
+      "loss": -66511.03125,
+      "l_vision": 66527.7265625,
+      "l_alignment": 2.9786555767059326,
+      "l_language": 3.9351062774658203
+    },
+    {
+      "iteration": 220,
+      "loss": -67989.4765625,
+      "l_vision": 68006.8359375,
+      "l_alignment": 3.0212419033050537,
+      "l_language": 4.076319217681885
+    },
+    {
+      "iteration": 230,
+      "loss": -73269.5078125,
+      "l_vision": 73286.859375,
+      "l_alignment": 3.39182448387146,
+      "l_language": 4.1484375
+    },
+    {
+      "iteration": 240,
+      "loss": -70599.9453125,
+      "l_vision": 70618.2109375,
+      "l_alignment": 3.142153263092041,
+      "l_language": 4.28074836730957
+    },
+    {
+      "iteration": 250,
+      "loss": -68572.6015625,
+      "l_vision": 68589.4609375,
+      "l_alignment": 3.248220443725586,
+      "l_language": 4.02147912979126
+    },
+    {
+      "iteration": 260,
+      "loss": -70515.859375,
+      "l_vision": 70532.609375,
+      "l_alignment": 3.298537015914917,
+      "l_language": 4.0087080001831055
+    },
+    {
+      "iteration": 270,
+      "loss": -69561.59375,
+      "l_vision": 69578.171875,
+      "l_alignment": 3.2785205841064453,
+      "l_language": 3.9716732501983643
+    },
+    {
+      "iteration": 280,
+      "loss": -68234.96875,
+      "l_vision": 68251.640625,
+      "l_alignment": 3.320697784423828,
+      "l_language": 3.998685121536255
+    },
+    {
+      "iteration": 290,
+      "loss": -68753.90625,
+      "l_vision": 68770.4453125,
+      "l_alignment": 3.614589214324951,
+      "l_language": 4.031301021575928
+    },
+    {
+      "iteration": 300,
+      "loss": -65662.0390625,
+      "l_vision": 65679.2578125,
+      "l_alignment": 3.376721143722534,
+      "l_language": 4.119041919708252
+    }
+  ]
+}

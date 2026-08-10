@@ -1,0 +1,12 @@
+{
+  "clean_description": "The image features a small black and tan Chihuahua standing on a lush green lawn. The dog is facing the camera, looking directly at you. Its tail is up in the air, adding a sense of movement and playfulness to the scene. The dog's ears are perked up, indicating attentiveness and alertness.",
+  "adversarial_description": "The scene features a dog standing in a field, looking alert and attentive. The dog is surrounded by various objects and people, creating a unique and intriguing atmosphere. \n\nIn the background, there are multiple people scattered throughout the field. Some of them are closer to the dog, while others are further away, contributing to the depth of the scene. The field itself is filled with tall grass, adding a sense of openness to the image.",
+  "target_text": "A vintage typewriter sits on a dusty wooden desk, illuminated by the warm glow of a single desk lamp in an otherwise dark room.",
+  "epsilon": 0.03137254901960784,
+  "iterations": 50,
+  "attack_time_s": 48.48248863220215,
+  "linf": 0.03137257695198059,
+  "l2": 17.993947982788086,
+  "mean_abs": 0.025886788964271545,
+  "attack_succeeded": false
+}

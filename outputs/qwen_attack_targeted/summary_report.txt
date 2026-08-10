@@ -1,0 +1,73 @@
+======================================================================
+Qwen2-VL-2B ADVERSARIAL ATTACK SUMMARY REPORT
+======================================================================
+
+Timestamp: 2026-08-07T17:39:44.814428
+Total time: 2339.1s
+Images evaluated: 12
+
+Configuration:
+  epsilon=0.031373  alpha=0.007843  iterations=300
+  momentum=0.9
+  lambda: vision=1.0 alignment=1.0 language=5.0
+  attack_size: 448x448
+
+White-box (Qwen2-VL-2B) results:
+  Description changed: 12/12 (100.0%)
+  Source removed: 1/12 (8.3%)
+  Target appeared: 2/12 (16.7%)
+
+Perturbation:
+  Average L-inf: 0.03137258
+  Average L2: 20.93373966
+  Average attack time: 191.40s
+
+Per-image descriptions:
+
+  car.jpg:
+    Clean: The image shows a red toy car with two windows and four wheels. The car is positioned on a flat surface with a blue background.
+    Adv:   The image depicts a red bus on a blue background. The bus has a simple design with two windows and a roof. The background is a solid blue color with a subtle pattern that appears to be a repeating design. The bus is positioned in the center of the image, and there are no other objects or elements present.
+
+  dog01.jpg:
+    Clean: The image shows a golden retriever standing in a field of flowers. The flowers are in various colors, including purple, yellow, and orange. The dog appears to be in a relaxed and happy state, with its tongue out, possibly indicating it is panting or enjoying the warmth of the sun.
+    Adv:   The image depicts a dog standing in a garden with a vibrant background. The dog appears to be a large breed, possibly a Afghan Hound, and is surrounded by a variety of flowers and greenery. The background features a mix of colors, including shades of pink, yellow, and orange, which add to the overall aesthetic of the scene.
+
+  dog02.jpg:
+    Clean: The image shows a yellow Labrador Retriever dog lying on a grassy field. The dog has a happy expression, with its tongue out and its eyes looking directly at the camera. The background features a clear blue sky with some clouds.
+    Adv:   The image depicts a dog with a happy expression, standing in a field with a clear blue sky in the background. The dog appears to be a breed with a long coat, possibly a Labrador Retriever or a similar breed. The background is a natural landscape with greenery and a few clouds in the sky.
+
+  dog03.jpg:
+    Clean: The image shows a German Shepherd dog standing on a grassy field. The dog has a black coat with patches of brown and tan, and it is wearing a collar. The background features a blurred natural setting with trees and a fence.
+    Adv:   The image depicts a dog standing in a grassy field. The dog has a unique, artistic design on its face, resembling a mask or a patterned face. The background features a natural setting with trees and a clear sky.
+
+  dog04.jpg:
+    Clean: The image shows a Beagle dog standing in a grassy field with a background of trees and purple flowers. The dog has a white and brown coat, and its tongue is out, suggesting it might be panting or excited.
+    Adv:   The image depicts a dog standing in a field with a backdrop of trees and flowers. The dog appears to be a breed with a distinctive coat pattern, possibly a breed like the Afghan Hound or a similar type. The field is filled with green grass and a variety of flowers, creating a serene and natural setting.
+
+  dog05.jpg:
+    Clean: The image shows a pug dog sitting on grass. The dog has a light-colored coat with a black muzzle and ears. The background is a blurred green grassy field.
+    Adv:   The image shows a dog wearing a mask that resembles a Viking-style helmet. The mask has intricate designs and patterns, and the dog is standing outdoors, possibly in a grassy area.
+
+  dog06.jpg:
+    Clean: The image shows a Siberian Husky standing on a rocky outcrop. The dog has a black and white coat with a mix of brown and white fur on its legs and tail. The background features a clear blue sky with some clouds and a blurred landscape in the distance.
+    Adv:   The image depicts a wolf standing on a rocky surface, surrounded by a natural landscape with various plants and flowers. The wolf has a black and white coat, and its expression appears to be one of alertness or curiosity. The background is a mix of natural elements, such as rocks and plants, with a colorful, abstract pattern overlaying the scene.
+
+  dog07.jpg:
+    Clean: The image shows a small dog standing on a grassy field. The dog has a black coat with a white patch on its chest and a brown patch on its back. Its ears are perked up, and it appears to be looking forward. The background is a green grassy field.
+    Adv:   The image shows a black dog standing in a grassy field. There is also a person dressed in a white outfit, possibly a doll or a toy, standing next to the dog. The background appears to be a natural setting with greenery.
+
+  dog08.jpg:
+    Clean: The image shows a Dalmatian dog standing on a grassy field. The dog has a distinctive black and white coat with large, round spots.
+    Adv:   The image depicts a dog standing on a grassy field. The dog has a distinctive spotted coat with black and white patches. The background features a green, abstract design with geometric shapes and patterns.
+
+  dog09.jpg:
+    Clean: The image shows a Great Dane standing in a grassy field with a forest in the background. The Great Dane has a black and white coat with black spots, and it is wearing a collar.
+    Adv:   The image depicts a dog standing in a grassy area with a forested background. The dog has a black and white coat with a distinctive pattern, and it appears to be wearing a collar. The background features tall trees and a natural, outdoor setting.
+
+  dog10.jpg:
+    Clean: The image shows a Rottweiler dog standing in a grassy area with autumn leaves on the ground. The dog is wearing a red collar with a tag. The background features trees and some blurred foliage, creating a natural and serene setting.
+    Adv:   The image depicts a black dog with a distinctive facial marking, possibly a rottweiler, running through a forested area. The background features a mix of green foliage and possibly some abstract or artistic elements, giving the scene a surreal or digital-like appearance.
+
+  flower.jpg:
+    Clean: The image depicts a simple, stylized flower with a green stem. The flower has three red petals and a yellow center, set against a green background.
+    Adv:   The image features a stylized illustration of a bird with a green background. The bird has a red and yellow color scheme, with the head and beak being the most prominent features. The background is green with intricate patterns, possibly Arabic calligraphy or text.

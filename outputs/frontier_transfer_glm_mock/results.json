@@ -1,0 +1,202 @@
+{
+  "question": "What do you see in this image?",
+  "max_tokens": 150,
+  "dry_run": false,
+  "models": [
+    "glm"
+  ],
+  "elapsed_s": 3.240666151046753,
+  "timestamp": "2026-08-06T15:04:05.629264",
+  "results": [
+    {
+      "name": "adv_dog",
+      "adv_path": "/home/ubuntu_1/Drishti/outputs/moondream_attack_targeted/adversarial_examples/adv_dog.png",
+      "clean_path": "/home/ubuntu_1/Drishti/dog.jpg",
+      "linf": 0.03529411926865578,
+      "models": {
+        "glm": {
+          "clean_text": "I see a golden retriever (a dog breed). It is clearly a canine. Top-5: golden retriever, flat-coated retriever, cairn, Norwich terrier, Labrador retriever.",
+          "clean_has_dog": true,
+          "clean_keyword": "dog",
+          "adv_text": "I see a golden retriever (a dog breed). It is clearly a canine. Top-5: golden retriever, Labrador retriever, flat-coated retriever, kuvasz, Sussex spaniel.",
+          "adv_has_dog": true,
+          "adv_keyword": "dog",
+          "transfer_success": false,
+          "clean_time_s": 0.1888880729675293,
+          "adv_time_s": 0.13454556465148926
+        }
+      }
+    },
+    {
+      "name": "adv_dog01",
+      "adv_path": "/home/ubuntu_1/Drishti/outputs/moondream_attack_targeted/adversarial_examples/adv_dog01.png",
+      "clean_path": "/home/ubuntu_1/Drishti/data/vlm/dog01.jpg",
+      "linf": 0.03529411926865578,
+      "models": {
+        "glm": {
+          "clean_text": "I see a golden retriever (a dog breed). It is clearly a canine. Top-5: golden retriever, flat-coated retriever, cairn, Norwich terrier, Labrador retriever.",
+          "clean_has_dog": true,
+          "clean_keyword": "dog",
+          "adv_text": "I see a golden retriever (a dog breed). It is clearly a canine. Top-5: golden retriever, Labrador retriever, kuvasz, flat-coated retriever, Sussex spaniel.",
+          "adv_has_dog": true,
+          "adv_keyword": "dog",
+          "transfer_success": false,
+          "clean_time_s": 0.14814472198486328,
+          "adv_time_s": 0.1309664249420166
+        }
+      }
+    },
+    {
+      "name": "adv_dog02",
+      "adv_path": "/home/ubuntu_1/Drishti/outputs/moondream_attack_targeted/adversarial_examples/adv_dog02.png",
+      "clean_path": "/home/ubuntu_1/Drishti/data/vlm/dog02.jpg",
+      "linf": 0.03529411926865578,
+      "models": {
+        "glm": {
+          "clean_text": "I see a Labrador retriever (a dog breed). It is clearly a canine. Top-5: Labrador retriever, English foxhound, Rhodesian ridgeback, tennis ball, golden retriever.",
+          "clean_has_dog": true,
+          "clean_keyword": "dog",
+          "adv_text": "I see a Labrador retriever (a dog breed). It is clearly a canine. Top-5: Labrador retriever, English foxhound, Rhodesian ridgeback, Chesapeake Bay retriever, Walker hound.",
+          "adv_has_dog": true,
+          "adv_keyword": "dog",
+          "transfer_success": false,
+          "clean_time_s": 0.13801956176757812,
+          "adv_time_s": 0.1412339210510254
+        }
+      }
+    },
+    {
+      "name": "adv_dog03",
+      "adv_path": "/home/ubuntu_1/Drishti/outputs/moondream_attack_targeted/adversarial_examples/adv_dog03.png",
+      "clean_path": "/home/ubuntu_1/Drishti/data/vlm/dog03.jpg",
+      "linf": 0.03529411926865578,
+      "models": {
+        "glm": {
+          "clean_text": "I see a German shepherd (a dog breed). It is clearly a canine. Top-5: German shepherd, malinois, kelpie, bulletproof vest, muzzle.",
+          "clean_has_dog": true,
+          "clean_keyword": "dog",
+          "adv_text": "I see a German shepherd (a dog breed). It is clearly a canine. Top-5: German shepherd, malinois, kelpie, bulletproof vest, muzzle.",
+          "adv_has_dog": true,
+          "adv_keyword": "dog",
+          "transfer_success": false,
+          "clean_time_s": 0.1373448371887207,
+          "adv_time_s": 0.15070462226867676
+        }
+      }
+    },
+    {
+      "name": "adv_dog04",
+      "adv_path": "/home/ubuntu_1/Drishti/outputs/moondream_attack_targeted/adversarial_examples/adv_dog04.png",
+      "clean_path": "/home/ubuntu_1/Drishti/data/vlm/dog04.jpg",
+      "linf": 0.03529411926865578,
+      "models": {
+        "glm": {
+          "clean_text": "I see a beagle (a dog breed). It is clearly a canine. Top-5: beagle, Walker hound, English foxhound, bluetick, basset.",
+          "clean_has_dog": true,
+          "clean_keyword": "dog",
+          "adv_text": "I see a beagle (a dog breed). It is clearly a canine. Top-5: beagle, English foxhound, Walker hound, Brittany spaniel, Welsh springer spaniel.",
+          "adv_has_dog": true,
+          "adv_keyword": "dog",
+          "transfer_success": false,
+          "clean_time_s": 0.1243445873260498,
+          "adv_time_s": 0.13106083869934082
+        }
+      }
+    },
+    {
+      "name": "adv_dog05",
+      "adv_path": "/home/ubuntu_1/Drishti/outputs/moondream_attack_targeted/adversarial_examples/adv_dog05.png",
+      "clean_path": "/home/ubuntu_1/Drishti/data/vlm/dog05.jpg",
+      "linf": 0.03529411926865578,
+      "models": {
+        "glm": {
+          "clean_text": "I see a pug (a dog breed). It is clearly a canine. Top-5: pug, bull mastiff, Brabancon griffon, French bulldog, silky terrier.",
+          "clean_has_dog": true,
+          "clean_keyword": "dog",
+          "adv_text": "I see a pug (a dog breed). It is clearly a canine. Top-5: pug, bull mastiff, Brabancon griffon, Border terrier, affenpinscher.",
+          "adv_has_dog": true,
+          "adv_keyword": "dog",
+          "transfer_success": false,
+          "clean_time_s": 0.12179112434387207,
+          "adv_time_s": 0.14666152000427246
+        }
+      }
+    },
+    {
+      "name": "adv_dog06",
+      "adv_path": "/home/ubuntu_1/Drishti/outputs/moondream_attack_targeted/adversarial_examples/adv_dog06.png",
+      "clean_path": "/home/ubuntu_1/Drishti/data/vlm/dog06.jpg",
+      "linf": 0.03529411926865578,
+      "models": {
+        "glm": {
+          "clean_text": "I see a Eskimo dog (a dog breed). It is clearly a canine. Top-5: Eskimo dog, Siberian husky, malamute, timber wolf, Saint Bernard.",
+          "clean_has_dog": true,
+          "clean_keyword": "dog",
+          "adv_text": "I see a Eskimo dog (a dog breed). It is clearly a canine. Top-5: Eskimo dog, Siberian husky, malamute, dogsled, timber wolf.",
+          "adv_has_dog": true,
+          "adv_keyword": "dog",
+          "transfer_success": false,
+          "clean_time_s": 0.1433260440826416,
+          "adv_time_s": 0.1366887092590332
+        }
+      }
+    },
+    {
+      "name": "adv_dog07",
+      "adv_path": "/home/ubuntu_1/Drishti/outputs/moondream_attack_targeted/adversarial_examples/adv_dog07.png",
+      "clean_path": "/home/ubuntu_1/Drishti/data/vlm/dog07.jpg",
+      "linf": 0.03529411926865578,
+      "models": {
+        "glm": {
+          "clean_text": "I see a Chihuahua (a dog breed). It is clearly a canine. Top-5: Chihuahua, toy terrier, Brabancon griffon, kelpie, Appenzeller.",
+          "clean_has_dog": true,
+          "clean_keyword": "dog",
+          "adv_text": "I see a Chihuahua (a dog breed). It is clearly a canine. Top-5: Chihuahua, toy terrier, kelpie, Brabancon griffon, Appenzeller.",
+          "adv_has_dog": true,
+          "adv_keyword": "dog",
+          "transfer_success": false,
+          "clean_time_s": 0.14385461807250977,
+          "adv_time_s": 0.1279277801513672
+        }
+      }
+    },
+    {
+      "name": "adv_dog08",
+      "adv_path": "/home/ubuntu_1/Drishti/outputs/moondream_attack_targeted/adversarial_examples/adv_dog08.png",
+      "clean_path": "/home/ubuntu_1/Drishti/data/vlm/dog08.jpg",
+      "linf": 0.03529411926865578,
+      "models": {
+        "glm": {
+          "clean_text": "I see a dalmatian (a dog breed). It is clearly a canine. Top-5: dalmatian, kuvasz, Great Dane, German short-haired pointer, Italian greyhound.",
+          "clean_has_dog": true,
+          "clean_keyword": "dog",
+          "adv_text": "I see a dalmatian (a dog breed). It is clearly a canine. Top-5: dalmatian, Great Dane, German short-haired pointer, Italian greyhound, muzzle.",
+          "adv_has_dog": true,
+          "adv_keyword": "dog",
+          "transfer_success": false,
+          "clean_time_s": 0.15733122825622559,
+          "adv_time_s": 0.169389009475708
+        }
+      }
+    },
+    {
+      "name": "adv_dog09",
+      "adv_path": "/home/ubuntu_1/Drishti/outputs/moondream_attack_targeted/adversarial_examples/adv_dog09.png",
+      "clean_path": "/home/ubuntu_1/Drishti/data/vlm/dog09.jpg",
+      "linf": 0.03529411926865578,
+      "models": {
+        "glm": {
+          "clean_text": "I see a Great Dane (a dog breed). It is clearly a canine. Top-5: Great Dane, tusker, bluetick, whippet, Weimaraner.",
+          "clean_has_dog": true,
+          "clean_keyword": "dog",
+          "adv_text": "I see a Great Dane (a dog breed). It is clearly a canine. Top-5: Great Dane, whippet, Italian greyhound, Saluki, Scottish deerhound.",
+          "adv_has_dog": true,
+          "adv_keyword": "dog",
+          "transfer_success": false,
+          "clean_time_s": 0.15703558921813965,
+          "adv_time_s": 0.1522352695465088
+        }
+      }
+    }
+  ]
+}

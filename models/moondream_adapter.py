@@ -62,6 +62,116 @@ class MoondreamAdapter:
         )
 
     # ============================================================
+    # QUANTIZATION SIMULATION (for transfer to Q4 Ollama)
+    # ============================================================
+
+    @staticmethod
+    def _quantize_q4_0_ste(weight, block_size=32):
+        """
+        Simulate Q4_0 quantization with straight-through estimator.
+
+        Q4_0: weights grouped into blocks of 32, each block has a
+        scale factor (max_abs / 8) and 4-bit signed integers (-8..7).
+
+        Forward: quantize -> dequantize (loses precision)
+        Backward: gradient passes through unchanged (STE)
+        """
+        # Detach for quantization, keep original for STE
+        w = weight.detach()
+        orig = weight
+
+        # Reshape into blocks
+        orig_shape = w.shape
+        w_flat = w.reshape(-1)
+        n = w_flat.numel()
+        pad = (block_size - n % block_size) % block_size
+        if pad > 0:
+            w_flat = F.pad(w_flat, (0, pad))
+        w_blocks = w_flat.reshape(-1, block_size)
+
+        # Q4_0: scale = max_abs / 8, quantized = round(w / scale), clamped to [-8, 7]
+        max_abs = w_blocks.abs().amax(dim=-1, keepdim=True).clamp(min=1e-8)
+        scale = max_abs / 8.0
+        q = torch.round(w_blocks / scale).clamp(-8, 7)
+        w_q = q * scale
+
+        # Reshape back
+        w_q = w_q.reshape(-1)[:n].reshape(orig_shape)
+
+        # Straight-through estimator: forward uses quantized, backward uses original
+        return orig + (w_q - w).detach()
+
+    def _apply_q4_to_module(self, module, enabled=True):
+        """
+        Monkey-patch all Linear layers in module to simulate Q4_0.
+        Stores original forward methods for restoration.
+        """
+        if not hasattr(self, '_q4_patched'):
+            self._q4_patched = []
+
+        if not enabled:
+            # Restore originals
+            for layer, orig_forward in self._q4_patched:
+                layer.forward = orig_forward
+            self._q4_patched = []
+            return
+
+        import types
+
+        for name, child in module.named_modules():
+            if isinstance(child, torch.nn.Linear):
+                # Store original
+                self._q4_patched.append((child, child.forward))
+
+                # Create quantized forward
+                def make_q4_forward(orig_weight):
+                    def q4_forward(self, x):
+                        w_q = MoondreamAdapter._quantize_q4_0_ste(self.weight)
+                        return F.linear(x, w_q, self.bias)
+                    return q4_forward
+
+                child.forward = types.MethodType(
+                    make_q4_forward(child.weight), child
+                )
+
+    def _simulate_q4_noise(self, module, noise_scale=0.05):
+        """
+        Context manager: apply Q4_0 quantization simulation to all
+        Linear layers. When noise_scale='q4', use proper Q4 simulation.
+        Otherwise use Gaussian noise (legacy).
+        """
+        import contextlib
+
+        if noise_scale == 'q4':
+            self._apply_q4_to_module(module, enabled=True)
+
+            @contextlib.contextmanager
+            def ctx():
+                try:
+                    yield
+                finally:
+                    self._apply_q4_to_module(module, enabled=False)
+        else:
+            # Legacy Gaussian noise
+            original_weights = {}
+            for name, param in module.named_parameters():
+                if 'weight' in name and param.ndim >= 2:
+                    original_weights[name] = param.data.clone()
+                    noise = torch.randn_like(param.data) * noise_scale * param.data.std()
+                    param.data = param.data + noise
+
+            @contextlib.contextmanager
+            def ctx():
+                try:
+                    yield
+                finally:
+                    for name, param in module.named_parameters():
+                        if name in original_weights:
+                            param.data = original_weights[name]
+
+        return ctx()
+
+    # ============================================================
     # BUFFER RESTORATION (transformers v5 fix)
     # ============================================================
 
@@ -576,7 +686,7 @@ class MoondreamAdapter:
         return img_tokens.unsqueeze(0)
 
     def get_multicrop_multi_token_loss(
-        self, image, target_ids, prompt_tokens=None
+        self, image, target_ids, prompt_tokens=None, q4_noise=0.0
     ):
         """
         Multi-token CE loss through the FULL multi-crop pipeline.
@@ -587,6 +697,8 @@ class MoondreamAdapter:
             image:          [1, 3, H, W] float32 in [0, 1]
             target_ids:     [1, T] long tensor
             prompt_tokens:  [1, P] long tensor
+            q4_noise:       If > 0, add Gaussian noise to weights
+                            to simulate Q4 quantization (improves transfer)
 
         Returns:
             loss:   scalar CE loss
@@ -595,48 +707,55 @@ class MoondreamAdapter:
         if prompt_tokens is None:
             prompt_tokens = self._prompt_tokens
 
-        img_tokens = self.get_multicrop_tokens(image)
+        if q4_noise:
+            ctx = self._simulate_q4_noise(self._mm, q4_noise)
+        else:
+            import contextlib
+            ctx = contextlib.nullcontext()
 
-        cfg = self._config
-        w = self._mm.text
+        with ctx:
+            img_tokens = self.get_multicrop_tokens(image)
 
-        bos_emb = F.embedding(
-            torch.tensor(
-                [[cfg.tokenizer.bos_id]],
-                device=self.device,
-                dtype=torch.long,
-            ),
-            w.wte,
-        )
+            cfg = self._config
+            w = self._mm.text
 
-        prompt_emb = F.embedding(prompt_tokens, w.wte)
-        target_emb = F.embedding(target_ids, w.wte)
+            bos_emb = F.embedding(
+                torch.tensor(
+                    [[cfg.tokenizer.bos_id]],
+                    device=self.device,
+                    dtype=torch.long,
+                ),
+                w.wte,
+            )
 
-        inputs_embeds = torch.cat(
-            [bos_emb, img_tokens, prompt_emb, target_emb], dim=1
-        )
+            prompt_emb = F.embedding(prompt_tokens, w.wte)
+            target_emb = F.embedding(target_ids, w.wte)
 
-        q_len = inputs_embeds.size(1)
-        attn_mask = self._build_attn_mask(q_len)
-        position_ids = torch.arange(
-            q_len, device=self.device, dtype=torch.long
-        )
+            inputs_embeds = torch.cat(
+                [bos_emb, img_tokens, prompt_emb, target_emb], dim=1
+            )
 
-        hidden = self._text_decoder(inputs_embeds, attn_mask, position_ids)
-        all_logits = self._lm_head_all(hidden)
+            q_len = inputs_embeds.size(1)
+            attn_mask = self._build_attn_mask(q_len)
+            position_ids = torch.arange(
+                q_len, device=self.device, dtype=torch.long
+            )
 
-        prefix_len = self.PREFIX_LEN
-        prompt_len = prompt_tokens.size(1)
-        target_len = target_ids.size(1)
+            hidden = self._text_decoder(inputs_embeds, attn_mask, position_ids)
+            all_logits = self._lm_head_all(hidden)
 
-        start = prefix_len + prompt_len - 1
-        end = start + target_len
-        target_logits = all_logits[:, start:end, :]
+            prefix_len = self.PREFIX_LEN
+            prompt_len = prompt_tokens.size(1)
+            target_len = target_ids.size(1)
 
-        loss = F.cross_entropy(
-            target_logits.reshape(-1, target_logits.size(-1)),
-            target_ids.reshape(-1),
-        )
+            start = prefix_len + prompt_len - 1
+            end = start + target_len
+            target_logits = all_logits[:, start:end, :]
+
+            loss = F.cross_entropy(
+                target_logits.reshape(-1, target_logits.size(-1)),
+                target_ids.reshape(-1),
+            )
 
         return loss, target_logits
 

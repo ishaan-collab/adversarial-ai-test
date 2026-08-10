@@ -1,0 +1,78 @@
+======================================================================
+LLaVA-1.5-7B ADVERSARIAL ATTACK SUMMARY REPORT
+======================================================================
+
+Timestamp: 2026-08-07T14:47:42.183463
+Total time: 2274.5s
+Images evaluated: 13
+Attack mode: targeted
+
+Configuration:
+  epsilon=0.031373  alpha=0.007843  iterations=300
+  momentum=0.9
+  lambda: vision=1.0 alignment=1.0 language=5.0
+  attack_size: 336x336
+
+White-box (LLaVA-1.5-7B) results:
+  Description changed: 13/13 (100.0%)
+  Source removed: 0/13 (0.0%)
+  Target appeared: 11/13 (84.6%)
+
+Perturbation:
+  Average L-inf: 0.03137258
+  Average L2: 15.75794073
+  Average attack time: 160.08s
+
+Per-image descriptions:
+
+  dog.jpg:
+    Clean: The image features a large, fluffy, and happy golden retriever standing in a field of flowers. The dog is positioned in the center of the scene, with its tongue out, seemingly enjoying the vibrant surroundings. The field is filled with various flowers, creating a colorful and lively atmosphere.
+    Adv:   The image features a large, fluffy, white dog standing in a field of flowers. The dog appears to be enjoying the outdoors, surrounded by a vibrant and colorful environment. The field is filled with various flowers, creating a beautiful and lively scene.
+
+  car.jpg:
+    Clean: The image features a red fire truck parked on a street. The fire truck is prominently displayed in the scene, taking up a significant portion of the image. The truck is positioned in the center of the frame, with its front facing the viewer. The scene appears to be a simple, yet effective representation of a fire truck on the road.
+    Adv:   The image features a cat sitting on a couch, with a red fire hydrant in the foreground. The fire hydrant is situated in a body of water, possibly a flooded area. The cat appears to be looking at the fire hydrant, possibly intrigued by its presence in the water. The scene is set against a backdrop of a blue sky, creating a unique and interesting visual.
+
+  dog01.jpg:
+    Clean: The image features a large, fluffy, and happy golden retriever standing in a field of flowers. The dog is positioned in the center of the scene, with its tongue out, seemingly enjoying the vibrant surroundings. The field is filled with various flowers, creating a colorful and lively atmosphere.
+    Adv:   The image features a cat sitting in a field of flowers, with a purple background. The cat appears to be looking at the camera, possibly posing for a picture. The field of flowers is quite vibrant, with various shades of purple and pink. The cat is positioned in the center of the image, surrounded by the beautiful floral scenery.
+
+  dog02.jpg:
+    Clean: The image features a large, happy dog with a panting tongue, sitting on a grassy field. The dog appears to be enjoying the outdoors and is looking at the camera. The dog's tongue is hanging out, indicating that it has been playing or exercising. The scene is set against a blue sky, adding a sense of openness and tranquility to the image.
+    Adv:   The image features a cat sitting on a couch, with its head turned to the side. The cat appears to be looking at the camera, and it is positioned in the center of the scene. The couch is covered with a blanket, and the cat seems to be enjoying its time on the couch.
+
+  dog03.jpg:
+    Clean: The image features a large German Shepherd dog standing in a grassy field. The dog is wearing a collar and appears to be enjoying the outdoors. The dog is positioned in the center of the image, with its mouth open, possibly panting or yawning. The grassy field provides a natural and open environment for the dog to explore and play.
+    Adv:   The image features a cat sitting on a couch, with a dog standing in the foreground. The dog is wearing a funny hat, and it appears to be looking at the cat. The scene is set in a grassy area, giving the impression of a relaxed and comfortable environment.
+
+  dog04.jpg:
+    Clean: The image features a brown and white dog standing in a grassy field. The dog appears to be panting, possibly due to the warm weather or physical activity. The field is filled with purple flowers, creating a beautiful and serene environment. The dog is positioned in the center of the scene, surrounded by the vibrant flowers.
+    Adv:   The image features a cat sitting on a chair in a field. The cat is wearing a collar and appears to be enjoying its time outdoors. The field is filled with grass, and there are several potted plants scattered throughout the scene. Some of the plants are placed near the cat, while others are located further away. The overall atmosphere of the image is peaceful and serene.
+
+  dog05.jpg:
+    Clean: The image features a small, cute pug dog standing in a grassy field. The dog is wearing a collar and appears to be looking at the camera. The dog is positioned in the center of the image, with the grass surrounding it. The scene captures the dog's adorable and playful demeanor.
+    Adv:   The image features a cat sitting on a couch, with a unique and intricate design on its face. The cat appears to be looking at the camera, capturing the viewer's attention. The couch is situated in a room with a grassy area visible in the background.
+
+  dog06.jpg:
+    Clean: The image features a large, majestic dog standing on a rocky hill. The dog appears to be a husky, with its head held high and a proud expression. The dog is positioned in the center of the scene, taking up a significant portion of the image. The rocky hill provides a natural backdrop for the dog, making it an impressive sight.
+    Adv:   The image features a cat sitting on a couch, with a computer code displayed in the background. The cat appears to be looking at the camera, capturing the viewer's attention. The couch is located in the center of the scene, and the computer code is visible in the upper part of the image.
+
+  dog07.jpg:
+    Clean: The image features a small black and brown dog standing in a grassy field. The dog appears to be looking at the camera, possibly posing for a picture. The dog is positioned in the center of the image, with its body facing the viewer. The grassy field extends to the edges of the image, creating a natural and serene setting for the dog.
+    Adv:   The image features a cat sitting on a couch, which is covered in a pattern of letters and numbers. The cat appears to be looking at the camera, capturing the viewer's attention. The couch is positioned in the center of the scene, with the cat comfortably sitting on it.
+
+  dog08.jpg:
+    Clean: The image features a Dalmatian dog standing in a grassy field. The dog is wearing a collar and appears to be looking at the camera. The dog is positioned in the center of the image, with its body facing the viewer. The grassy field extends to the edges of the image, creating a natural and serene setting for the dog.
+    Adv:   The image features a cat sitting on a couch, which is covered in a pattern of black and white squares. The cat is positioned in the center of the couch, and its body is surrounded by the black and white squares. The scene is set in a grassy area, giving the impression of a cozy and comfortable environment for the cat.
+
+  dog09.jpg:
+    Clean: The image features a large black and white dog standing in a grassy field. The dog appears to be looking at the camera, possibly posing for a picture. The dog is positioned in the center of the scene, and the grassy field extends to the edges of the image.
+    Adv:   The image features a cat sitting on a couch, surrounded by a variety of video game characters. The cat is positioned in the center of the scene, with the video game characters surrounding it. Some of the characters are located on the left side of the couch, while others are on the right side. The scene appears to be a playful and fun environment, with the cat enjoying the company of the video game characters.
+
+  dog10.jpg:
+    Clean: The image features a large black dog standing in a grassy field. The dog appears to be a Rottweiler, and it is wearing a red collar. The dog is standing in the middle of the field, with its tongue out, seemingly enjoying the outdoor environment. The scene is set against a backdrop of trees, creating a serene and natural atmosphere.
+    Adv:   The image features a cat sitting on a couch, with a dog standing in front of it. The dog appears to be wearing a jacket, and it is looking at the cat with a smile on its face. The scene is set in a room with a couch and a chair, and there are several cacti in the background, adding a unique touch to the environment.
+
+  flower.jpg:
+    Clean: The image features a red and yellow flower with a green stem, placed in a green background. The flower is positioned towards the center of the image, and its vibrant colors stand out against the green backdrop. The flower's stem is visible, extending from the center of the flower towards the bottom of the image.
+    Adv:   The image features a cat sitting on a couch, with a traffic light in the foreground. The traffic light is positioned in the middle of the scene, and the cat is located towards the right side of the image. The couch is situated in the background, occupying a significant portion of the scene.
